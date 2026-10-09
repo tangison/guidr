@@ -211,22 +211,22 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                 {exp.summary}
               </p>
 
-              <section aria-labelledby="highlights" className="mt-10">
-                <h2 id="highlights" className="text-[24px] font-bold text-ink">
+              <section aria-labelledby="highlights" className="mt-12">
+                <h2 id="highlights" className="text-[26px] font-bold text-ink">
                   Highlights
                 </h2>
                 <ul className="mt-5 grid gap-3.5 sm:grid-cols-2">
                   {lists.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-[15px] leading-relaxed text-ink-700">
-                      <FootprintIcon className="mt-1 h-3 w-auto shrink-0" color="var(--terracotta)" />
+                    <li key={h} className="flex items-start gap-3 text-[16px] leading-relaxed text-ink-700">
+                      <FootprintIcon className="mt-1 h-4 w-auto shrink-0" color="var(--terracotta)" />
                       {h}
                     </li>
                   ))}
                 </ul>
               </section>
 
-              <section aria-labelledby="itinerary" className="mt-10">
-                <h2 id="itinerary" className="text-[24px] font-bold text-ink">
+              <section aria-labelledby="itinerary" className="mt-12">
+                <h2 id="itinerary" className="text-[26px] font-bold text-ink">
                   The plan, step by step
                 </h2>
                 <ol className="mt-6 space-y-0">
@@ -240,7 +240,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                         />
                       )}
                       <span className="relative z-10 mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-white">
-                        <FootprintIcon className="h-3.5 w-auto" color="var(--terracotta)" />
+                        <FootprintIcon className="h-4 w-auto" color="var(--terracotta)" />
                       </span>
                       <div className="min-w-0">
                         <p className="tabular text-[13px] font-semibold text-terracotta-700">
@@ -249,7 +249,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                         <h3 className="mt-0.5 text-[17px] font-semibold text-ink">
                           {step.title}
                         </h3>
-                        <p className="mt-1 text-[15px] leading-relaxed text-ink-700">
+                        <p className="mt-1 text-[16px] leading-relaxed text-ink-700">
                           {step.text}
                         </p>
                       </div>
@@ -258,8 +258,8 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                 </ol>
               </section>
 
-              <section aria-labelledby="description" className="mt-10">
-                <h2 id="description" className="text-[24px] font-bold text-ink">
+              <section aria-labelledby="description" className="mt-12">
+                <h2 id="description" className="text-[26px] font-bold text-ink">
                   What this trip is
                 </h2>
                 <p className="mt-5 whitespace-pre-line text-[16px] leading-[26px] text-ink-700">
@@ -267,9 +267,9 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                 </p>
               </section>
 
-              <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              <div className="mt-12 grid gap-6 sm:grid-cols-2">
                 <section aria-labelledby="included" className="rounded-lg border border-line bg-bone-50 p-6">
-                  <h2 id="included" className="text-[18px] font-semibold text-ink">
+                  <h2 id="included" className="text-[20px] font-semibold text-ink">
                     Included
                   </h2>
                   <ul className="mt-4 space-y-2.5">
@@ -282,7 +282,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                   </ul>
                 </section>
                 <section aria-labelledby="not-included" className="rounded-lg border border-line bg-white p-6">
-                  <h2 id="not-included" className="text-[18px] font-semibold text-ink">
+                  <h2 id="not-included" className="text-[20px] font-semibold text-ink">
                     Not included
                   </h2>
                   <ul className="mt-4 space-y-2.5">
@@ -297,7 +297,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
               </div>
 
               <section aria-labelledby="bring" className="mt-6 rounded-lg border border-line bg-white p-6">
-                <h2 id="bring" className="text-[18px] font-semibold text-ink">
+                <h2 id="bring" className="text-[20px] font-semibold text-ink">
                   What to bring
                 </h2>
                 <ul className="mt-4 flex flex-wrap gap-2.5">
@@ -313,18 +313,18 @@ export default async function ExperiencePage({ params }: { params: Params }) {
               </section>
 
               <section aria-labelledby="meeting" className="mt-6 rounded-lg border border-line bg-white p-6">
-                <h2 id="meeting" className="text-[18px] font-semibold text-ink">
+                <h2 id="meeting" className="text-[20px] font-semibold text-ink">
                   Meeting point
                 </h2>
-                <p className="mt-3 flex items-start gap-2.5 text-[15px] leading-relaxed text-ink-700">
+                <p className="mt-3 flex items-start gap-2.5 text-[16px] leading-relaxed text-ink-700">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-terracotta" aria-hidden="true" />
                   {exp.meetingPoint}
                 </p>
               </section>
 
               {/* Operator card */}
-              <section aria-labelledby="operator" className="mt-10">
-                <h2 id="operator" className="text-[24px] font-bold text-ink">
+              <section aria-labelledby="operator" className="mt-12">
+                <h2 id="operator" className="text-[26px] font-bold text-ink">
                   Your operator
                 </h2>
                 <div className="mt-5 flex flex-col gap-5 rounded-xl border border-line bg-white p-6 sm:flex-row sm:items-center">
@@ -338,7 +338,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <p className="text-[18px] font-semibold text-ink">
+                      <p className="text-[20px] font-semibold text-ink">
                         {exp.operator.name.replace(" (demo)", "")}
                       </p>
                       {exp.operator.isDemo && (
@@ -363,9 +363,9 @@ export default async function ExperiencePage({ params }: { params: Params }) {
 
               {/* Reviews */}
               {reviews.length > 0 && (
-                <section aria-labelledby="reviews" className="mt-10">
+                <section aria-labelledby="reviews" className="mt-12">
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h2 id="reviews" className="text-[24px] font-bold text-ink">
+                    <h2 id="reviews" className="text-[26px] font-bold text-ink">
                       Reviews
                     </h2>
                     <RatingBadge rating={exp.rating} count={exp.reviewCount} />
@@ -401,7 +401,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                         </div>
                         <blockquote className="mt-4">
                           <p className="text-[15px] font-semibold text-ink">{r.title}</p>
-                          <p className="mt-1.5 text-[15px] leading-relaxed text-ink-700">
+                          <p className="mt-1.5 text-[16px] leading-relaxed text-ink-700">
                             {r.text}
                           </p>
                         </blockquote>
@@ -437,7 +437,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
           {/* Similar */}
           {similar.length > 0 && (
             <section aria-labelledby="similar" className="mt-16 lg:mt-24">
-              <h2 id="similar" className="text-[24px] font-bold text-ink">
+              <h2 id="similar" className="text-[26px] font-bold text-ink">
                 Similar experiences
               </h2>
               <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

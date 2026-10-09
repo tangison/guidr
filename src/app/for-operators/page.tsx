@@ -114,7 +114,7 @@ export default function ForOperatorsPage() {
               Built around how you already work
             </h2>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {BENEFITS.map((b) => (
               <div key={b.title} className="rounded-lg border border-line bg-bone-50 p-6 sm:p-7">
                 <span className="flex h-11 w-11 items-center justify-center rounded-md bg-white text-terracotta-700">
@@ -137,7 +137,7 @@ export default function ForOperatorsPage() {
               From application to first booking
             </h2>
           </div>
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s) => (
               <li key={s.step} className="rounded-lg border border-line bg-white p-6">
                 <span className="tabular text-[28px] font-bold text-line-strong">{s.step}</span>
@@ -152,7 +152,7 @@ export default function ForOperatorsPage() {
       {/* Fees */}
       <section id="fees" aria-labelledby="fees" className="bg-white">
         <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
             <div>
               <p className="eyebrow text-terracotta-700">Fees, plainly</p>
               <h2 className="mt-2 text-[26px] leading-[32px] sm:text-[38px] sm:leading-[44px] font-bold tracking-[-0.015em] text-ink">
@@ -173,7 +173,7 @@ export default function ForOperatorsPage() {
                   "First 90 days of listing fees waived for launch operators",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-ink-700">
-                    <FootprintIcon className="mt-1 h-3 w-auto shrink-0" color="var(--terracotta)" />
+                    <FootprintIcon className="mt-1 h-4 w-auto shrink-0" color="var(--terracotta)" />
                     {item}
                   </li>
                 ))}
@@ -236,7 +236,7 @@ export default function ForOperatorsPage() {
 
       {/* Apply CTA */}
       <section id="apply" aria-labelledby="apply-cta" className="bg-ink">
-        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-20">
+        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
             <div>
               <p className="eyebrow text-mustard">Applications open</p>

@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "1) **No.** The layout is clean, responsive, and free of visible overlaps or broken components across all three views.\n2) **Yes.** The GUIDR wordmark with the orange \"I\" and shoe-print icon renders consistently in the header and footer of all screenshots.\n3) **Yes.** The cards feature clear imagery, bold typography, pricing badges, and hover-style containers that strongly imply interactivity.\n4) **Yes**, the design is polished, professional, and fully functional enough to ship as a premium travel marketplace.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1791528837,
+  "id": "202610091453416979ba2d611b45f0",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "202610091453416979ba2d611b45f0",
+  "usage": {
+    "completion_tokens": 111,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 15970,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 16081
+  }
+}

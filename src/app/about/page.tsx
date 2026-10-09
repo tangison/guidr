@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GuidrWordmark, FootprintTrail, FootprintIcon } from "@/components/site/logo";
+import { GuidrLockup, FootprintTrail, FootprintIcon } from "@/components/site/logo";
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[900px] px-5 lg:px-8 py-12 lg:py-20">
+      <div className="mx-auto max-w-[900px] px-5 lg:px-8 py-12 lg:py-24">
         <p className="eyebrow text-terracotta-700">About</p>
         <h1 className="mt-2 text-[32px] leading-[38px] sm:text-[52px] sm:leading-[58px] font-bold tracking-[-0.02em] text-ink">
           The friendly local alternative.
@@ -42,7 +42,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <FootprintTrail className="my-12 h-4" color="var(--sand)" />
+        <FootprintTrail className="my-12 h-9" color="var(--sand)" />
 
         <div className="grid gap-8 sm:grid-cols-3">
           {[
@@ -61,7 +61,7 @@ export default function AboutPage() {
           ].map((v) => (
             <div key={v.title}>
               <h2 className="flex items-center gap-2 text-[18px] font-semibold text-ink">
-                <FootprintIcon className="h-3.5 w-auto" color="var(--terracotta)" />
+                <FootprintIcon className="h-4 w-auto" color="var(--terracotta)" />
                 {v.title}
               </h2>
               <p className="mt-2 text-[15px] leading-relaxed text-ink-700">{v.text}</p>
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
         {/* Credits */}
         <div className="mt-12 flex flex-col items-start gap-4 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <GuidrWordmark className="h-7 w-auto" />
+          <GuidrLockup className="h-14 w-auto" />
           <p className="text-[13px] text-ink-500">
             Built by{" "}
             <a

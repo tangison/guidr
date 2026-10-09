@@ -12,7 +12,7 @@ export function LegalPage({
 }) {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[720px] px-5 lg:px-8 py-12 lg:py-20">
+      <div className="mx-auto max-w-[720px] px-5 lg:px-8 py-12 lg:py-24">
         <nav aria-label="Legal" className="text-[13px] text-ink-500">
           <Link href="/" className="hover:text-ink underline-offset-2 hover:underline">
             Home
@@ -34,7 +34,7 @@ export function LegalPage({
           </p>
         </div>
 
-        <div className="mt-10 space-y-10">
+        <div className="mt-12 space-y-10">
           {sections.map((s) => (
             <section key={s.heading}>
               <h2 className="text-[20px] font-semibold text-ink">{s.heading}</h2>
@@ -49,7 +49,7 @@ export function LegalPage({
           ))}
         </div>
 
-        <p className="mt-14 border-t border-line pt-6 text-[13px] text-ink-500">
+        <p className="mt-16 border-t border-line pt-6 text-[13px] text-ink-500">
           Questions about this document? Email{" "}
           <a href="mailto:legal@getguidr.com" className="text-ink-700 underline underline-offset-4 hover:text-ink">
             legal@getguidr.com

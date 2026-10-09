@@ -15,7 +15,7 @@ export function ExperienceCard({
   return (
     <Link
       href={`/experiences/${experience.slug}`}
-      className="group block rounded-lg border border-line bg-white overflow-hidden transition-all duration-200 hover:border-line-strong hover:shadow-e2 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+      className="group block rounded-lg border border-line bg-white overflow-hidden transition-all duration-200 hover:border-line-strong hover:shadow-e2 hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -27,11 +27,11 @@ export function ExperienceCard({
           className="object-cover transition-transform duration-400 group-hover:scale-[1.03]"
         />
         {experience.isDemo && (
-          <span className="absolute left-3 top-3 rounded-sm bg-white/90 px-2.5 py-1 text-[11px] font-medium tracking-wide text-ink-700 uppercase">
+          <span className="absolute left-3 top-3 rounded-sm bg-white/90 px-2.5 py-1 text-[12px] font-medium tracking-wide text-ink-700 uppercase">
             Demo listing
           </span>
         )}
-        <span className="absolute right-3 bottom-3 rounded-full bg-white/95 px-3 py-1 text-[13px] font-semibold text-ink tabular">
+        <span className="absolute right-3 bottom-3 rounded-full bg-white/95 px-3 py-1 text-[14px] font-semibold text-ink tabular">
           {formatFromPrice(experience.priceMinor, experience.currency, perGroup)}
         </span>
       </div>

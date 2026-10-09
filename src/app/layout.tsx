@@ -38,12 +38,21 @@ export const metadata: Metadata = {
     siteName: "Guidr",
     type: "website",
     locale: "en_NA",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Guidr — Namibia, guided properly. Curated local operators, honest prices, WhatsApp-first booking.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Guidr — Guided tours and activities in Namibia",
     description:
       "Curated local operators, honest prices, WhatsApp-first booking.",
+    images: ["/og.jpg"],
   },
 };
 

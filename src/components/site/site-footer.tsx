@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
-import { GuidrWordmark, FootprintTrail } from "@/components/site/logo";
+import { GuidrLockup, FootprintTrail } from "@/components/site/logo";
 import { WHATSAPP_NUMBER, waLink } from "@/lib/whatsapp";
 
 const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
@@ -38,12 +38,16 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
 export function SiteFooter() {
   return (
     <footer className="mt-auto bg-ink text-white">
-      <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
-            <GuidrWordmark className="h-8 w-auto" color="#FFFFFF" />
+            <GuidrLockup
+              className="h-14 w-auto"
+              color="#FFFFFF"
+              accent="#E0673A"
+            />
             <FootprintTrail
-              className="my-6 h-4"
+              className="my-7 h-9"
               color="var(--mustard)"
             />
             <p className="text-[15px] leading-relaxed text-white/70">
@@ -87,7 +91,7 @@ export function SiteFooter() {
           {COLUMNS.map((col) => (
             <nav key={col.title} aria-label={col.title}>
               <h3 className="eyebrow text-white/50 mb-5">{col.title}</h3>
-              <ul className="space-y-3.5">
+              <ul className="space-y-4">
                 {col.links.map((link) => (
                   <li key={link.href}>
                     <Link
@@ -116,11 +120,11 @@ export function SiteFooter() {
           >
             Built by Tangison Studio
             <img
-              src="/brand/tangison-light.png"
-              alt=""
-              width={20}
-              height={20}
-              className="opacity-70"
+              src="/brand/tangison-light-64.png"
+              alt="Tangison Studio"
+              width={54}
+              height={16}
+              className="opacity-80"
             />
           </a>
         </div>

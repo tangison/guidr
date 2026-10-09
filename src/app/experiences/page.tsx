@@ -50,7 +50,7 @@ export default async function ExperiencesPage({
           </p>
         </header>
 
-        <div className="mt-10">
+        <div className="mt-12">
           <ExperienceFilters
             destinations={destinations.map((d) => ({ slug: d.slug, name: d.name }))}
           />
@@ -69,7 +69,7 @@ export default async function ExperiencesPage({
           </div>
         ) : (
           <div className="mt-6 rounded-xl border border-line bg-white px-6 py-16 text-center">
-            <FootprintTrail className="mx-auto h-5" color="var(--line-strong)" />
+            <FootprintTrail className="mx-auto h-9" color="var(--line-strong)" />
             <h2 className="mt-5 text-[20px] font-semibold text-ink">
               No tours match yet.
             </h2>
@@ -77,7 +77,7 @@ export default async function ExperiencesPage({
               Try another date or category, or ask the planner — it will
               suggest the closest experiences in the catalogue.
             </p>
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/planner"
                 className="inline-flex h-11 items-center rounded-md bg-terracotta px-5 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"

@@ -17,7 +17,7 @@ const DOCS = [
 export default function LegalIndex() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-[720px] px-5 lg:px-8 py-12 lg:py-20">
+      <div className="mx-auto max-w-[720px] px-5 lg:px-8 py-12 lg:py-24">
         <p className="eyebrow text-terracotta-700">Legal</p>
         <h1 className="mt-2 text-[32px] leading-[38px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.02em] text-ink">
           The paperwork
@@ -26,7 +26,7 @@ export default function LegalIndex() {
           Written to be read. All of it is placeholder text until a lawyer
           familiar with Namibian law reviews each document before launch.
         </p>
-        <ul className="mt-10 divide-y divide-line rounded-xl border border-line">
+        <ul className="mt-12 divide-y divide-line rounded-xl border border-line">
           {DOCS.map((d) => (
             <li key={d.href}>
               <Link

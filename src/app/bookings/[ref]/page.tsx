@@ -155,7 +155,7 @@ export default async function BookingPage({
                           <CheckCircle2 className="h-4 w-4 text-success" aria-hidden="true" />
                         ) : (
                           <FootprintIcon
-                            className="h-3.5 w-auto"
+                            className="h-4 w-auto"
                             color={active ? "var(--terracotta)" : "var(--line-strong)"}
                           />
                         )}

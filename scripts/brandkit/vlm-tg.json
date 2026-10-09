@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "**Image 1 (Dark Background):**\n\n*   **Graphic Elements:** A stylized, calligraphic Chinese character icon on the left side. It resembles the character \"汤\" (Tāng) rendered in a brush-stroke style with rough, organic edges.\n*   **Text/Letters:** The word \"**TANGISON**\" in uppercase Latin letters to the right of the icon. The font is a clean, bold sans-serif.\n*   **Style:** Combination mark (both an icon and a wordmark).\n*   **Arrangement:** Horizontal layout. The calligraphic icon is positioned on the far left, and the text \"TANGISON\" follows immediately to its right. The text is aligned with the vertical center of the icon.\n\n**Image 2 (White Background):**\n\n*   **Graphic Elements:** Identical stylized, calligraphic Chinese character icon (\"汤\") on the left side.\n*   **Text/Letters:** The word \"**TANGISON**\" in identical uppercase, bold sans-serif lettering to the right of the icon.\n*   **Style:** Combination mark (identical structure to Image 1).\n*   **Arrangement:** Identical horizontal layout as Image 1, with the icon on the left and the text extending to the right.\n\n*(Note: The only difference between the two images is the color inversion—Image 1 features white graphics on a black background, while Image 2 features black graphics on a white background.)*",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1791526371,
+  "id": "20261009141246dd8fcf6b49ef48dc",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261009141246dd8fcf6b49ef48dc",
+  "usage": {
+    "completion_tokens": 306,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 6715,
+    "prompt_tokens_details": {
+      "cached_tokens": 2
+    },
+    "total_tokens": 7021
+  }
+}

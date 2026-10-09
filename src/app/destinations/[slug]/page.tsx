@@ -83,10 +83,10 @@ export default async function DestinationPage({ params }: { params: Params }) {
               <p className="text-[18px] leading-[28px] text-ink">
                 {destination.intro}
               </p>
-              <h2 className="mt-10 text-[24px] font-bold text-ink">
+              <h2 className="mt-12 text-[24px] font-bold text-ink">
                 Local tips
               </h2>
-              <ul className="mt-5 space-y-3.5">
+              <ul className="mt-5 space-y-4">
                 {tips.map((tip, i) => (
                   <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-ink-700">
                     <Footprints className="mt-1 h-4 w-4 shrink-0 text-terracotta" aria-hidden="true" />

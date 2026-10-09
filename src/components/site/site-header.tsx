@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, MessageCircle } from "lucide-react";
-import { GuidrWordmark, FootprintIcon } from "@/components/site/logo";
+import { GuidrLockup } from "@/components/site/logo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -49,8 +49,7 @@ export function SiteHeader() {
           className="flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta-700 rounded-sm"
           aria-label="Guidr home"
         >
-          <GuidrWordmark className="h-6 w-auto sm:h-[26px]" showFootprint={false} />
-          <FootprintIcon className="h-5 w-auto" color="var(--terracotta)" />
+          <GuidrLockup className="h-11 w-auto sm:h-12" />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:flex items-center gap-7">
@@ -86,13 +85,16 @@ export function SiteHeader() {
               Ask on WhatsApp
             </a>
           </Button>
-          <Button
-            asChild
-            size="sm"
-            className="hidden sm:inline-flex h-10 px-5 bg-terracotta hover:bg-terracotta-700 text-white text-[15px] font-semibold"
-          >
-            <Link href="/planner">Plan my trip</Link>
-          </Button>
+          {/* Planner CTA hidden on the planner itself */}
+          {!pathname.startsWith("/planner") && (
+            <Button
+              asChild
+              size="sm"
+              className="hidden sm:inline-flex h-10 px-5 bg-terracotta hover:bg-terracotta-700 text-white text-[15px] font-semibold"
+            >
+              <Link href="/planner">Plan my trip</Link>
+            </Button>
+          )}
 
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
@@ -110,7 +112,7 @@ export function SiteHeader() {
             >
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <div className="flex h-16 items-center justify-between border-b border-line px-5">
-                <GuidrWordmark className="h-6 w-auto" showFootprint={false} />
+                <GuidrLockup className="h-11 w-auto" />
                 <button
                   className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink hover:bg-bone-50"
                   onClick={() => setOpen(false)}

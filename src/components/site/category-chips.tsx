@@ -26,7 +26,7 @@ export function CategoryChips({
             role="listitem"
             href={`/experiences?category=${slug}`}
             aria-current={isActive ? "true" : undefined}
-            className={`inline-flex h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
+            className={`inline-flex h-11 sm:h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
               isActive
                 ? "bg-ink text-white"
                 : "bg-bone-50 text-ink-700 hover:bg-bone hover:text-ink"

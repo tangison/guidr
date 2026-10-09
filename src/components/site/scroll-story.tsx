@@ -136,7 +136,7 @@ function SceneLayer({
             className="mt-5 inline-flex h-11 items-center gap-2 rounded-md bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             {scene.link.label}
-            <FootprintIcon className="h-4 w-auto" color="var(--terracotta)" />
+            <FootprintIcon className="h-5 w-auto" color="var(--terracotta)" />
           </Link>
         </div>
       </motion.div>

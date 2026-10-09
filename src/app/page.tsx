@@ -152,7 +152,7 @@ export default async function HomePage() {
               between you and your guide.
             </p>
           </div>
-          <div className="mt-8 sm:mt-10 max-w-4xl">
+          <div className="mt-8 sm:mt-12 max-w-4xl">
             <SearchBar />
             <p className="mt-3 pl-2 text-[13px] text-white/70">
               Popular right now:{" "}
@@ -219,7 +219,7 @@ export default async function HomePage() {
                 Coast. Desert. Wild.
               </h2>
             </div>
-            <FootprintTrail className="hidden h-4 sm:flex" color="var(--sand)" />
+            <FootprintTrail className="hidden h-9 sm:flex" color="var(--sand)" />
           </div>
           <ScrollStory scenes={scenes} />
         </div>
@@ -241,7 +241,7 @@ export default async function HomePage() {
               with its own guides, seasons and local tips.
             </p>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {destinations.map((d, i) => (
               <Link
                 key={d.slug}
@@ -288,7 +288,7 @@ export default async function HomePage() {
                 plan three days at the coast for a family of four, then send
                 the whole plan to booking in one go.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/planner"
                   className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
@@ -313,7 +313,7 @@ export default async function HomePage() {
                 </div>
                 <div className="flex gap-3">
                   <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
-                    <FootprintIcon className="h-4 w-auto" color="var(--mustard)" />
+                    <FootprintIcon className="h-5 w-auto" color="var(--mustard)" />
                   </span>
                   <div className="max-w-[85%] space-y-3">
                     <p className="rounded-lg rounded-bl-sm bg-bone-50 px-4 py-3 text-[14px] leading-relaxed text-ink">
@@ -354,7 +354,7 @@ export default async function HomePage() {
               Four steps, no lock-in
             </h2>
           </div>
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {HOW_IT_WORKS.map((step, i) => (
               <li key={step.title} className="rounded-lg border border-line bg-white p-6">
                 <div className="flex items-center justify-between">
@@ -396,9 +396,13 @@ export default async function HomePage() {
                 Demo reviews — replaced by verified bookings at launch.
               </p>
             </div>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {reviews.map((r) => (
-                <figure key={r.id} className="flex flex-col rounded-lg border border-line bg-white p-6">
+                <Link
+                  key={r.id}
+                  href={`/experiences/${r.experience.slug}#reviews`}
+                  className="group flex flex-col rounded-lg border border-line bg-white p-6 transition-all duration-200 hover:border-line-strong hover:shadow-e2 hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                >
                   <ReviewStars rating={r.rating} />
                   <blockquote className="mt-4 flex-1">
                     <p className="text-[15px] font-semibold text-ink">{r.title}</p>
@@ -406,14 +410,16 @@ export default async function HomePage() {
                       {r.text}
                     </p>
                   </blockquote>
-                  <figcaption className="mt-5 border-t border-line pt-4 text-[13px] text-ink-500">
+                  <div className="mt-5 border-t border-line pt-4 text-[13px] text-ink-500">
                     <span className="font-medium text-ink-700">{r.authorName}</span>
                     {" · "}
                     {r.partyType}
                     <br />
-                    {r.experience.title}
-                  </figcaption>
-                </figure>
+                    <span className="text-terracotta-700 group-hover:underline underline-offset-2">
+                      {r.experience.title}
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -423,7 +429,7 @@ export default async function HomePage() {
       {/* ============ Operator CTA ============ */}
       <section aria-labelledby="operators-cta" className="bg-bone">
         <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
               <Image
                 src="/images/experiences/desert-walk.jpg"
@@ -464,12 +470,12 @@ export default async function HomePage() {
                   "Monthly invoices with commission on completed trips only",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-ink-700">
-                    <FootprintIcon className="mt-0.5 h-3.5 w-auto shrink-0" color="var(--terracotta)" />
+                    <FootprintIcon className="mt-0.5 h-4 w-auto shrink-0" color="var(--terracotta)" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/for-operators"
                   className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
@@ -491,8 +497,8 @@ export default async function HomePage() {
 
       {/* ============ App waitlist ============ */}
       <section aria-labelledby="waitlist" className="bg-ink">
-        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-16 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <p className="eyebrow text-mustard">The Guidr app</p>
               <h2

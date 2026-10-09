@@ -38,3 +38,25 @@ Work Log:
 Stage Summary:
 - Guidr marketing site + web app fully functional and browser-verified
 - Delivered: home, experiences index/detail, 7 destinations, planner (AI), for-operators, how-it-works, about, legal, 404, booking flow, waitlist
+
+---
+Task ID: 3
+Agent: Super Z (main agent)
+Task: Replace the approximated logo with the user's REAL logo + real assets, apply the taste skills, make the site perfect
+
+Work Log:
+- Decoded the user's real logo from the brand identity kit source (upload/brand-kit/brand-identity-kit/scripts/helpers.py + social_flyer.py) — exact vector geometry: stroke-8 geometric GUIDR capitals (open D confirmed against BOTH print kit and social flyer), terracotta I, real shoe-print silhouette (bezier sole + rounded heel) at 2.4x cap height
+- Rendered the exact geometry via cairosvg (scripts/brandkit/render_real_logo.py), VLM-verified it reads GUIDR with a proper shoe print
+- Rewrote src/components/site/logo.tsx with exact path data: FootprintIcon (real shoe print), FootprintTrail (mustard, -18deg, ascending sizes per print kit), GuidrWordmark, GuidrLockup (full 2.4x lockup) — same export names, all 40+ usages auto-upgraded
+- Header (desktop + mobile sheet) and footer now use the full real lockup; footer accent #E0673A on ink per print kit
+- favicon (src/app/icon.svg): cream shoe print on terracotta rounded square (brand book cover treatment); apple-icon.png 180px generated
+- public/logo.svg: canonical real lockup; OG card public/og.jpg 1200x630 (hero dunes + scrim + grain + real lockup + mustard trail + Poppins headline) wired into metadata openGraph/twitter
+- Tangison credit fixed: 2909x870 logo was squashed 20x20 -> right-sized 64px asset at correct 3.34:1 aspect
+- Taste pass (guidr-design-taste skill, critique protocol + taste-checklist): VLM critiques on 11 pages desktop + mobile, claims verified against code before acting
+- Real fixes applied: waitlist button mustard->terracotta (one-accent rule), footprint trail sizes h-4->h-9 (reads as prints now), small footprint icons bumped, type scale (H2 24->26, H3 18->20, labels 11->12, reading text 15->16), off-scale structural spacing normalized (28/40/56/80 -> 32/48/64/96), 44px mobile chip touch targets, 1px card lift per motion spec M12, redundant header CTA hidden on /planner, home review teasers now link to experience detail
+- Verified: overflow audit (0 horizontal overflow desktop+mobile, all clips intentional), route sweep 15 routes 200 + 404 correct, lint clean, mobile sheet/header/CTA functional checks, final VLM ship gate passed ("shippable as a premium travel marketplace")
+
+Stage Summary:
+- The site now carries the user's REAL logo and assets everywhere (header, footer, about, favicon, apple-icon, OG card, print-quality lockup)
+- Taste-passed against the Guidr design system: on-scale type and spacing, one-accent discipline, meaningful footprint motif, touch targets, honest truncation with click-through
+- Deliverables: real-geometry logo components, og.jpg, icon.svg, apple-icon.png, tangison-light-64.png, QA scripts under scripts/qa + scripts/brandkit

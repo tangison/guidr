@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function PlannerPage() {
   return (
     <div className="bg-bone">
-      <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-12 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+      <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-12 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
             <p className="eyebrow text-terracotta-700">The Guidr planner</p>
             <h1 className="mt-2 text-[32px] leading-[38px] sm:text-[52px] sm:leading-[58px] font-bold tracking-[-0.02em] text-ink">
@@ -25,7 +25,7 @@ export default function PlannerPage() {
               experiences at their listed prices — so a plan you like is a
               plan you can actually book.
             </p>
-            <FootprintTrail className="my-8 h-4" color="var(--sand)" />
+            <FootprintTrail className="my-8 h-9" color="var(--sand)" />
             <ul className="space-y-4">
               {[
                 {

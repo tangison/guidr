@@ -85,7 +85,7 @@ export function PlannerChat() {
         {messages.length === 0 && (
           <div className="flex flex-col items-center py-10 text-center">
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-terracotta-50">
-              <FootprintIcon className="h-7 w-auto" color="var(--terracotta)" />
+              <FootprintIcon className="h-8 w-auto" color="var(--terracotta)" />
             </span>
             <h2 className="mt-4 text-[20px] font-semibold text-ink">
               Where to, and for how long?
@@ -119,7 +119,7 @@ export function PlannerChat() {
             <div key={i} className="space-y-3">
               <div className="flex gap-3">
                 <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
-                  <FootprintIcon className="h-4 w-auto" color="var(--mustard)" />
+                  <FootprintIcon className="h-5 w-auto" color="var(--mustard)" />
                 </span>
                 <p className="max-w-[85%] rounded-lg rounded-bl-sm bg-bone-50 px-4 py-3 text-[14px] leading-relaxed whitespace-pre-wrap text-ink">
                   {m.content}
@@ -175,7 +175,7 @@ export function PlannerChat() {
         {loading && (
           <div className="flex items-center gap-3">
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
-              <FootprintIcon className="h-4 w-auto" color="var(--mustard)" />
+              <FootprintIcon className="h-5 w-auto" color="var(--mustard)" />
             </span>
             <span className="flex items-center gap-2 text-[14px] text-ink-500">
               <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />

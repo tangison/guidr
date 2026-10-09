@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="bg-bone-50">
       <div className="mx-auto flex max-w-[720px] flex-col items-center px-5 py-24 text-center lg:py-32">
-        <FootprintTrail className="h-5" color="var(--line-strong)" />
+        <FootprintTrail className="h-9" color="var(--line-strong)" />
         <p className="eyebrow mt-8 text-terracotta-700">404</p>
         <h1 className="mt-2 text-[32px] leading-[38px] sm:text-[44px] sm:leading-[50px] font-bold tracking-[-0.02em] text-ink">
           The trail ends here.
@@ -34,7 +34,7 @@ export default function NotFound() {
             Search
           </button>
         </form>
-        <div className="mt-10 flex flex-wrap justify-center gap-2.5">
+        <div className="mt-12 flex flex-wrap justify-center gap-2.5">
           {[
             { href: "/destinations", label: "Destinations" },
             { href: "/experiences", label: "All experiences" },

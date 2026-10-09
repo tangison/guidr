@@ -131,7 +131,7 @@ export function ExperienceFilters({
         <button
           onClick={() => update({ category: "all" })}
           aria-pressed={current.category === "all"}
-          className={`inline-flex h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
+          className={`inline-flex h-11 sm:h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
             current.category === "all"
               ? "bg-ink text-white"
               : "bg-white text-ink-700 hover:bg-bone"
@@ -144,7 +144,7 @@ export function ExperienceFilters({
             key={slug}
             onClick={() => update({ category: slug })}
             aria-pressed={current.category === slug}
-            className={`inline-flex h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
+            className={`inline-flex h-11 sm:h-9 items-center rounded-full px-4 text-[14px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
               current.category === slug
                 ? "bg-ink text-white"
                 : "bg-white text-ink-700 hover:bg-bone"
