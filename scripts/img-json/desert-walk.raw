@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "small guided tour group walking across golden desert sand in Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "small guided tour group walking across golden desert sand in Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/10f336cafe4f.jpg",
+      "caption": "",
+      "source": "Extraordinary Journeys",
+      "original_width": "2000px",
+      "original_height": "2000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/52d8d5341fb0.jpg",
+      "caption": "",
+      "source": "Extraordinary Journeys",
+      "original_width": "2880px",
+      "original_height": "1920px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0bb101d781f3.jpg",
+      "caption": "",
+      "source": "Llama Travel",
+      "original_width": "1500px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e17117be138f.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "938px"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "hot air balloon floating over Sossusvlei dunes at sunrise Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/40f8e99e80a4.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "956px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3d9370ea6963.jpg",
+      "caption": "",
+      "source": "YouTube",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4a7a52ee1d5a.jpg",
+      "caption": "",
+      "source": "Discover Africa Safaris",
+      "original_width": "2160px",
+      "original_height": "1440px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/667a8fd861c0.jpg",
+      "caption": "",
+      "source": "Country and Town House",
+      "original_width": "1280px",
+      "original_height": "1707px"
+    }
+  ]
+}

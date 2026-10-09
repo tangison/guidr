@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "desert adapted elephant walking in rocky Damaraland Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/69da1fce7be5.webp",
+      "caption": "",
+      "source": "Viatu Travel",
+      "original_width": "1920px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e19c0002ef5b.jpg",
+      "caption": "",
+      "source": "Enchanting Travels",
+      "original_width": "3800px",
+      "original_height": "2534px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/66268bc0b14f.jpg",
+      "caption": "",
+      "source": "Wilderness Safaris",
+      "original_width": "1920px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bdd82791c5b7.jpg",
+      "caption": "",
+      "source": "Michael and Lori Barber Travel Blog | latitude B",
+      "original_width": "1280px",
+      "original_height": "720px"
+    }
+  ]
+}

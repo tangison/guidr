@@ -1,0 +1,135 @@
+// Guidr — Namibia tours marketplace data model (v1, SQLite flavor)
+// Lists are stored as JSON strings (SQLite has no list primitives).
+// Money is integer minor units + currency code. Never floats.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Destination {
+  id            String  @id @default(cuid())
+  slug          String  @unique
+  name          String
+  region        String
+  tagline       String
+  intro         String
+  bestSeason    String
+  howToGetThere String
+  nearestTown   String
+  driveTimes    String // JSON: [{from, time}]
+  localTips     String // JSON: string[]
+  heroImage     String
+  latitude      Float
+  longitude     Float
+  featured      Boolean @default(false)
+  experiences   Experience[]
+}
+
+model Operator {
+  id             String  @id @default(cuid())
+  slug           String  @unique
+  name           String
+  tagline        String
+  about          String
+  baseCity       String
+  whatsapp       String
+  yearsRunning   Int     @default(5)
+  isDemo         Boolean @default(true)
+  experiences    Experience[]
+}
+
+model Experience {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  title           String
+  summary         String
+  description     String
+  destinationSlug String
+  destination     Destination @relation(fields: [destinationSlug], references: [slug])
+  operatorId      String
+  operator        Operator   @relation(fields: [operatorId], references: [id])
+  categories      String   // JSON: string[]
+  durationMinutes Int
+  groupMax        Int      @default(12)
+  groupMin        Int      @default(1)
+  languages       String   // JSON: string[]
+  difficulty      String   @default("easy") // easy | moderate | challenging
+  familyFriendly  Boolean  @default(true)
+  priceModel      String   @default("per_person") // per_person | per_group
+  priceMinor      Int
+  childPriceMinor Int?
+  currency        String   @default("NAD")
+  highlights      String   // JSON: string[]
+  itinerary       String   // JSON: [{time, title, text}]
+  included        String   // JSON: string[]
+  notIncluded     String   // JSON: string[]
+  whatToBring     String   // JSON: string[]
+  meetingPoint    String
+  meetingLat      Float?
+  meetingLng      Float?
+  policy          String   @default("moderate") // flexible | moderate | strict
+  responseTime    String   @default("Usually within 4 hours")
+  rating          Float    @default(0)
+  reviewCount     Int      @default(0)
+  heroImage       String
+  gallery         String   // JSON: string[]
+  isDemo          Boolean  @default(true)
+  featured        Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  reviews         Review[]
+  bookings        Booking[]
+}
+
+model Review {
+  id           String   @id @default(cuid())
+  experienceId String
+  experience   Experience @relation(fields: [experienceId], references: [id])
+  authorName   String
+  authorCountry String
+  partyType    String   // solo | couple | family | friends
+  rating       Int
+  title        String
+  text         String
+  travelDate   String
+  isDemo       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+}
+
+model Booking {
+  id                String   @id @default(cuid())
+  ref               String   @unique
+  experienceId      String
+  experience        Experience @relation(fields: [experienceId], references: [id])
+  travellerName     String
+  travellerEmail    String
+  travellerWhatsapp String?
+  date              String   // ISO date the traveller requests
+  guests            Int      @default(2)
+  notes             String?
+  status            String   @default("requested")
+  // requested | accepted | declined | expired | awaiting_payment | paid | completed | cancelled
+  totalPriceMinor   Int
+  currency          String   @default("NAD")
+  createdAt         DateTime @default(now())
+  events            BookingEvent[]
+}
+
+model BookingEvent {
+  id        String   @id @default(cuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id])
+  type      String   // created | status_change | note
+  text      String
+  createdAt DateTime @default(now())
+}
+
+model WaitlistEntry {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "dolphins and seals swimming alongside a catamaran cruise in Walvis Bay Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/18b5bfca9384.jpg",
+      "caption": "",
+      "source": "Tripadvisor",
+      "original_width": "1200px",
+      "original_height": "900px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/253f7c248471.jpg",
+      "caption": "",
+      "source": "Swakopmund",
+      "original_width": "1920px",
+      "original_height": "1337px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5b212eba0801.jpg",
+      "caption": "",
+      "source": "Dreamstime",
+      "original_width": "1600px",
+      "original_height": "1157px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fedebce133d6.jpg",
+      "caption": "",
+      "source": "www.booking.com",
+      "original_width": "1200px",
+      "original_height": "800px"
+    }
+  ]
+}

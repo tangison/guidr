@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "flamingos feeding in the Walvis Bay lagoon at sunset Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "flamingos feeding in the Walvis Bay lagoon at sunset Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7d2269c357a2.jpg",
+      "caption": "",
+      "source": "Trip.com",
+      "original_width": "1741px",
+      "original_height": "2296px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/62e5d9aaf189.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "957px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c13ae638c92f.jpg",
+      "caption": "",
+      "source": "Walvis Bay Tours",
+      "original_width": "1920px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/869ab9893223.jpg",
+      "caption": "",
+      "source": "Christobel Travel",
+      "original_width": "1300px",
+      "original_height": "1800px"
+    }
+  ]
+}

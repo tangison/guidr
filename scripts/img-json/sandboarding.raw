@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "sandboarding down a tall sand dune in Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "sandboarding down a tall sand dune in Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c155a3deff95.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "965px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ede741232b9c.jpg",
+      "caption": "",
+      "source": "iExplore",
+      "original_width": "1183px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/04a0ec4e0fe0.jpg",
+      "caption": "",
+      "source": "Civitatis",
+      "original_width": "1620px",
+      "original_height": "552px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b1d3a3ead90b.jpg",
+      "caption": "",
+      "source": "Trip.com",
+      "original_width": "1920px",
+      "original_height": "1440px"
+    }
+  ]
+}

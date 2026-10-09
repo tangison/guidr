@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "kayaking with cape fur seals at Pelican Point Walvis Bay Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "kayaking with cape fur seals at Pelican Point Walvis Bay Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2eec765a063f.jpg",
+      "caption": "",
+      "source": "Eco Marine Kayak Tours - TrekkSoft",
+      "original_width": "1280px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c64f10b7897c.jpg",
+      "caption": "",
+      "source": "www.ecomarinekayak.com",
+      "original_width": "1280px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a4d886a28f7f.jpeg",
+      "caption": "",
+      "source": "Pelican Point Kayaking",
+      "original_width": "1440px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/324ec90f6fbe.jpg",
+      "caption": "",
+      "source": "Walvis Bay Tours",
+      "original_width": "1920px",
+      "original_height": "1280px"
+    }
+  ]
+}

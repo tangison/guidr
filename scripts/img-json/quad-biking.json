@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "person riding a quad bike on a sand dune in the Namib desert near Swakopmund Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f5978e777c5f.jpg",
+      "caption": "",
+      "source": "African Sky",
+      "original_width": "1920px",
+      "original_height": "660px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aa6a9fd87691.jpg",
+      "caption": "",
+      "source": "My Guide Namibia",
+      "original_width": "1500px",
+      "original_height": "1001px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/994aa7aa20b6.jpg",
+      "caption": "",
+      "source": "Travel Africa Your Way",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/407b5e984eb0.jpeg",
+      "caption": "",
+      "source": "Swakopmund Quad Biking",
+      "original_width": "3932px",
+      "original_height": "2621px"
+    }
+  ]
+}

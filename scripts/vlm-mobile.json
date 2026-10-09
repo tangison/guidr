@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Based on the 390px screenshot:\n\n**1) Layout & Usability:** Clean and highly usable. The design follows standard mobile patterns with clear visual hierarchy, readable typography (large hero text), and a prominent search card that is easy to interact with using thumbs.\n\n**2) Stacking Order:** Correctly implemented.\n*   **Header:** Logo (left), location pin (center), hamburger menu (right) — properly spaced.\n*   **Hero Content:** Small label (\"NAMIBIA...\") → Large headline → Subtext — stacked vertically with appropriate padding.\n*   **Search Module:** Positioned below the text with four distinct input fields (Activity, Location, Date, Guests) and a full-width CTA button. The stacking is logical for mobile form entry.\n\n**3) Overflow & Broken Elements:** None detected.\n*   All content fits within the 390px viewport without horizontal scrolling.\n*   Text wraps naturally (e.g., \"who know the land.\" breaks correctly).\n*   Search inputs have adequate touch targets (height ~48-56px).\n*   The \"N\" badge in the bottom-left corner appears to be an intentional UI element (likely a map/location toggle or notification dot) rather than a broken element.\n\n**Verdict:** The mobile layout is production-ready with no critical issues.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1791514835,
+  "id": "20261009110027ddcf986e74a142fc",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20261009110027ddcf986e74a142fc",
+  "usage": {
+    "completion_tokens": 269,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 441,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 710
+  }
+}

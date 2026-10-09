@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "smiling African safari guide portrait outdoors in warm light",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7235c64ea985.jpg",
+      "caption": "",
+      "source": "Canadian Geographic",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/73c5b8e63fe4.jpg",
+      "caption": "",
+      "source": "safari frank",
+      "original_width": "1920px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/043ddbcbbc01.jpg",
+      "caption": "",
+      "source": "Passport & Pixels",
+      "original_width": "1200px",
+      "original_height": "920px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/32fabccd675f.jpg",
+      "caption": "",
+      "source": "EF Ultimate Break",
+      "original_width": "1536px",
+      "original_height": "864px"
+    }
+  ]
+}

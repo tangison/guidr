@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "small desert creature like a gecko or chameleon on sand in the Namib desert Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "small desert creature like a gecko or chameleon on sand in the Namib desert Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6eff58836498.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "960px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c14e9058da38.jpg",
+      "caption": "",
+      "source": "Tripadvisor",
+      "original_width": "1200px",
+      "original_height": "904px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/69c6b74f8481.jpg",
+      "caption": "",
+      "source": "Wild Moments",
+      "original_width": "980px",
+      "original_height": "1307px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e960b46d4112.jpeg",
+      "caption": "",
+      "source": "Sense Earth",
+      "original_width": "1024px",
+      "original_height": "768px"
+    }
+  ]
+}

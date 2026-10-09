@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "warm sunrise light over the big red sand dunes of the Namib desert in Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d69a563a359d.jpeg",
+      "caption": "",
+      "source": "Pexels",
+      "original_width": "4128px",
+      "original_height": "6192px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c217c255fc0d.jpg",
+      "caption": "",
+      "source": "Next Adventure",
+      "original_width": "1600px",
+      "original_height": "1067px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e9a3bfa51372.jpg",
+      "caption": "",
+      "source": "Live Like It's the Weekend",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6a9f1a771dc9.jpg",
+      "caption": "",
+      "source": "Lifetime Lost Travel",
+      "original_width": "2500px",
+      "original_height": "1667px"
+    }
+  ]
+}

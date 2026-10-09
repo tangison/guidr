@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "Swakopmund coastline with the jetty and Atlantic ocean Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "Swakopmund coastline with the jetty and Atlantic ocean Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/084d609528a2.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "1200px",
+      "original_height": "1200px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f3a81fff5bb2.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "1300px",
+      "original_height": "956px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0e2011df2cca.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "2048px",
+      "original_height": "764px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6bc53b6c1aec.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "810px",
+      "original_height": "1080px"
+    }
+  ]
+}

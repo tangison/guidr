@@ -1,0 +1,33 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "climbers walking up the ridge of Dune 45 at sunrise Sossusvlei Namibia"
+✅ Got 3 images
+{
+  "success": true,
+  "query": "climbers walking up the ridge of Dune 45 at sunrise Sossusvlei Namibia",
+  "count": 3,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/20c28786c4c3.jpg",
+      "caption": "",
+      "source": "Adventure to Awaken",
+      "original_width": "2000px",
+      "original_height": "1125px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/63b821906b3a.jpg",
+      "caption": "",
+      "source": "Shutterstock",
+      "original_width": "1002px",
+      "original_height": "1600px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/37d584b00bc2.jpg",
+      "caption": "",
+      "source": "Much Better Adventures",
+      "original_width": "2048px",
+      "original_height": "1366px"
+    }
+  ]
+}

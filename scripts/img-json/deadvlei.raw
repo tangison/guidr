@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "dead camelthorn trees on the white clay pan of Deadvlei with red dunes behind Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "dead camelthorn trees on the white clay pan of Deadvlei with red dunes behind Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/69ab58b84ea0.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "866px",
+      "original_height": "1390px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e0a3e3376e9b.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "1300px",
+      "original_height": "956px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5430b636bac0.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "1500px",
+      "original_height": "1100px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c9b05c8a120a.jpg",
+      "caption": "",
+      "source": "",
+      "original_width": "1300px",
+      "original_height": "956px"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "small cessna aircraft scenic flight over the Atlantic coast and dunes of Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dffc4cb2cd03.jpg",
+      "caption": "",
+      "source": "Desert Air Namibia",
+      "original_width": "1215px",
+      "original_height": "911px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8a440de68e64.jpg",
+      "caption": "",
+      "source": "Desert Air Namibia",
+      "original_width": "1364px",
+      "original_height": "911px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c9b14196a1d5.jpg",
+      "caption": "",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "951px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7c366566a0be.jpg",
+      "caption": "",
+      "source": "SwissAfrican",
+      "original_width": "1280px",
+      "original_height": "853px"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "narrow rock walls of Sesriem Canyon Namibia"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "narrow rock walls of Sesriem Canyon Namibia",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bd035298dbd0.jpg",
+      "caption": "",
+      "source": "Namibia-Experience",
+      "original_width": "2048px",
+      "original_height": "1210px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/479372206af1.jpg",
+      "caption": "",
+      "source": "Tripadvisor",
+      "original_width": "983px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7d85968ac5e3.jpg",
+      "caption": "",
+      "source": "Viatu Travel",
+      "original_width": "1920px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0b2169e748dd.jpg",
+      "caption": "",
+      "source": "Namibia-Experience",
+      "original_width": "2048px",
+      "original_height": "1210px"
+    }
+  ]
+}

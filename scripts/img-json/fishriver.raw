@@ -1,0 +1,40 @@
+🚀 Initializing Z-AI SDK...
+🔎 Searching images: "wide panorama of Fish River Canyon in Namibia with layered rock"
+✅ Got 4 images
+{
+  "success": true,
+  "query": "wide panorama of Fish River Canyon in Namibia with layered rock",
+  "count": 4,
+  "ranked": false,
+  "captioned_count": 0,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f9d9d88d8d1e.jpg",
+      "caption": "",
+      "source": "NEXT LEVEL OF TRAVEL",
+      "original_width": "1200px",
+      "original_height": "794px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e8d391ce6c47.jpg",
+      "caption": "",
+      "source": "Divergent Travelers",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6884bfca354f.jpg",
+      "caption": "",
+      "source": "NEXT LEVEL OF TRAVEL",
+      "original_width": "1200px",
+      "original_height": "794px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a6c4f68924bb.jpg",
+      "caption": "",
+      "source": "Unsplash",
+      "original_width": "3000px",
+      "original_height": "1996px"
+    }
+  ]
+}
