@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 };
 
 const DOCS = [
-  { href: "/legal/terms", title: "Terms of use", desc: "What Guidr is, what an account means, and where responsibilities sit." },
-  { href: "/legal/privacy", title: "Privacy policy", desc: "What we collect, what we share, and how to export or delete your data." },
+  { href: "/terms", title: "Terms of use", desc: "What Guidr is, what an account means, and where responsibilities sit." },
+  { href: "/privacy-policy", title: "Privacy policy", desc: "What we collect, what we share, and how to export or delete your data." },
   { href: "/legal/cancellation", title: "Cancellation and refunds", desc: "The three cancellation presets and how refunds move." },
   { href: "/legal/operator-agreement", title: "Operator agreement", desc: "The arrangement between Guidr and the operators who list trips." },
 ];

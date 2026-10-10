@@ -7,7 +7,7 @@ import { getAllDestinations } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Destinations",
   description:
-    "Where Guidr operates: Swakopmund, Walvis Bay, Sossusvlei, Etosha, Damaraland, Fish River Canyon and Spitzkoppe — seasons, drive times and local tips.",
+    "Where Guidr operates: Swakopmund, Walvis Bay, Sossusvlei, Etosha, Damaraland, Fish River Canyon and Spitzkoppe: seasons, drive times and local tips.",
 };
 
 export default async function DestinationsPage() {
@@ -22,7 +22,7 @@ export default async function DestinationsPage() {
             Namibia, destination by destination
           </h1>
           <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
-            We launch at the coast — Swakopmund and Walvis Bay — and expand
+            We launch at the coast, Swakopmund and Walvis Bay, and expand
             inland as operators join. Each destination page carries the
             seasons, the drive times and the local tips that usually take
             three conversations to collect.
@@ -115,8 +115,8 @@ export default async function DestinationsPage() {
               </h2>
               <p className="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-white/80">
                 We expand as operators join. If you guide trips anywhere in
-                Namibia — or you are a traveller looking for somewhere in
-                particular — tell us, and we will prioritise it.
+                Namibia, or you are a traveller looking for somewhere in
+                particular, tell us, and we will prioritise it.
               </p>
             </div>
           </div>

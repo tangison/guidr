@@ -34,7 +34,7 @@ export default function AboutPage() {
             at prices that are real.
           </p>
           <p>
-            We launch where we live: the coast — Swakopmund and Walvis Bay.
+            We launch where we live: the coast: Swakopmund and Walvis Bay.
             From there, inland: Sossusvlei, Etosha, Damaraland, Fish River,
             Spitzkoppe. Every operator is approved by a human, every listing
             is reviewed before it goes live, and every review is tied to a
@@ -52,7 +52,7 @@ export default function AboutPage() {
             },
             {
               title: "WhatsApp first",
-              text: "Every key moment — request, confirmation, payment, reminder — has a WhatsApp path. Because that is how Namibia actually communicates.",
+              text: "Every key moment (request, confirmation, payment, reminder) has a WhatsApp path. Because that is how Namibia actually communicates.",
             },
             {
               title: "Guidr never holds the money",

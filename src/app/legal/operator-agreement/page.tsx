@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/site/legal-page";
 
 export const metadata: Metadata = {
   title: "Operator agreement",
-  description: "The agreement between Guidr and its tour operators — placeholder pending legal review.",
+  description: "The agreement between Guidr and its tour operators, placeholder pending legal review.",
 };
 
 export default function OperatorAgreementPage() {
@@ -21,7 +21,7 @@ export default function OperatorAgreementPage() {
         {
           heading: "Fees",
           body: [
-            "A monthly listing fee per published experience plus a commission on completed bookings. Commission accrues only when a booking reaches COMPLETED — never on requests, declines, cancellations or no-shows. Invoices are issued on the 1st and 16th of each month.",
+            "A monthly listing fee per published experience plus a commission on completed bookings. Commission accrues only when a booking reaches COMPLETED, never on requests, declines, cancellations or no-shows. Invoices are issued on the 1st and 16th of each month.",
           ],
         },
         {

@@ -21,14 +21,14 @@ const COLUMNS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/planner", label: "AI trip planner" },
       { href: "/for-operators", label: "For operators" },
       { href: "/about", label: "About" },
-      { href: "/about#contact", label: "Contact" },
+      { href: "/brand", label: "Brand" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { href: "/legal/terms", label: "Terms of use" },
-      { href: "/legal/privacy", label: "Privacy policy" },
+      { href: "/terms", label: "Terms of use" },
+      { href: "/privacy-policy", label: "Privacy policy" },
       { href: "/legal/cancellation", label: "Cancellation" },
       { href: "/legal/operator-agreement", label: "Operator agreement" },
     ],
@@ -110,7 +110,7 @@ export function SiteFooter() {
         <div className="mt-16 flex flex-col gap-4 border-t border-white/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[13px] text-white/55">
             © {new Date().getFullYear()} Guidr. All rights reserved. Launching
-            at the coast — Swakopmund and Walvis Bay.
+            at the coast: Swakopmund and Walvis Bay.
           </p>
           <a
             href="https://studio.tangison.com"
@@ -118,7 +118,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[13px] text-white/55 hover:text-white/80 transition-colors"
           >
-            Built by Tangison Studio
+            Made by Tangison Studio
             <img
               src="/brand/tangison-light-64.png"
               alt="Tangison Studio"

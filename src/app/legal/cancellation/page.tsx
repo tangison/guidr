@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/site/legal-page";
 
 export const metadata: Metadata = {
   title: "Cancellation and refunds",
-  description: "Cancellation and refund policy for Guidr bookings — placeholder pending legal review.",
+  description: "Cancellation and refund policy for Guidr bookings, placeholder pending legal review.",
 };
 
 export default function CancellationPage() {
@@ -27,7 +27,7 @@ export default function CancellationPage() {
         {
           heading: "Refunds",
           body: [
-            "Refunds are paid by the operator through the same channel you paid them — bank transfer or their payment link. If a refund is delayed or disputed, contact support with your booking reference; the booking thread is the shared source of truth.",
+            "Refunds are paid by the operator through the same channel you paid them: bank transfer or their payment link. If a refund is delayed or disputed, contact support with your booking reference; the booking thread is the shared source of truth.",
           ],
         },
         {

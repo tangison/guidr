@@ -43,6 +43,8 @@ export function SiteHeader() {
           : "bg-white border-b border-transparent"
       )}
     >
+      {/* Brand bar: terracotta into mustard, sampled from the lockup artwork */}
+      <div className="brand-bar w-full" aria-hidden="true" />
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 lg:px-8">
         <Link
           href="/"

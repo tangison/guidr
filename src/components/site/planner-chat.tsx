@@ -16,8 +16,6 @@ type Card = {
   currency: string;
   summary: string;
   heroImage: string;
-  rating: number;
-  reviewCount: number;
   isDemo: boolean;
 };
 
@@ -26,7 +24,7 @@ type Msg = { role: "user" | "assistant"; content: string; cards?: Card[] };
 const SUGGESTIONS = [
   "Plan 3 days at the coast for a family of four with a N$ 4,000 per person budget.",
   "Two quiet days around Sossusvlei for a couple who like walking and photography.",
-  "A first-time visitor has one week in Namibia — what should not be missed?",
+  "A first-time visitor has one week in Namibia: what should not be missed?",
 ];
 
 export function PlannerChat() {

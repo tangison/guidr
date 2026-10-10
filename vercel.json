@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "prisma generate && mkdir -p /tmp && cp db/custom.db /tmp/guidr.db && next build"
+}

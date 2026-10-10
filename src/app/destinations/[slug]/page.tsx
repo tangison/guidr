@@ -131,7 +131,7 @@ export default async function DestinationPage({ params }: { params: Params }) {
                   Have a question?
                 </h2>
                 <p className="mt-2 text-[14px] leading-relaxed text-ink-700">
-                  Ask about guides, seasons or the drive — we answer on
+                  Ask about guides, seasons or the drive; we answer on
                   WhatsApp.
                 </p>
                 <div className="mt-4">

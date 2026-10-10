@@ -29,7 +29,7 @@ export function LegalPage({
           <p className="flex items-start gap-2.5 text-[14px] leading-relaxed text-ink-700">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-terracotta" aria-hidden="true" />
             This text is a working placeholder. It must be reviewed by a
-            lawyer familiar with Namibian law before launch — see the
+            lawyer familiar with Namibian law before launch; see the
             content-and-legal notes in the project pack.
           </p>
         </div>

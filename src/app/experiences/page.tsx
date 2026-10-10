@@ -9,7 +9,7 @@ import { searchExperiences, getAllDestinations } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Experiences",
   description:
-    "Browse guided tours and activities across Namibia — the coast, the desert, the wild. Honest prices from local operators.",
+    "Browse guided tours and activities across Namibia: the coast, the desert, the wild. Honest prices from local operators.",
 };
 
 type SearchParams = Promise<{
@@ -45,7 +45,7 @@ export default async function ExperiencesPage({
           </h1>
           <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
             Sixteen experiences across seven destinations, each run by a local
-            operator. Prices shown are the operator's own — demo listings are
+            operator. Prices shown are the operator's own; demo listings are
             labelled until real operators go live.
           </p>
         </header>
@@ -74,7 +74,7 @@ export default async function ExperiencesPage({
               No tours match yet.
             </h2>
             <p className="mx-auto mt-2 max-w-md text-[15px] leading-relaxed text-ink-700">
-              Try another date or category, or ask the planner — it will
+              Try another date or category, or ask the planner: it will
               suggest the closest experiences in the catalogue.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

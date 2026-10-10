@@ -15,7 +15,7 @@ const BENEFITS = [
   {
     icon: MessageCircle,
     title: "Requests arrive on WhatsApp",
-    text: "A traveller requests, you get the message you already check. Accept or decline in one tap — no dashboard to babysit.",
+    text: "A traveller requests, you get the message you already check. Accept or decline in one tap. No dashboard to babysit.",
   },
   {
     icon: Banknote,
@@ -36,7 +36,7 @@ const BENEFITS = [
 
 const STEPS = [
   { step: "01", title: "Apply", text: "Business details, your guides, the trips you run. Takes ten minutes; we reply within two working days." },
-  { step: "02", title: "List", text: "A guided wizard builds your listing — photos, itinerary, pricing, policies. We review before it goes live." },
+  { step: "02", title: "List", text: "A guided wizard builds your listing: photos, itinerary, pricing, policies. We review before it goes live." },
   { step: "03", title: "Confirm", text: "Requests arrive on WhatsApp and email. Accept, decline or reschedule; the traveller is informed either way." },
   { step: "04", title: "Get paid", text: "The traveller pays you directly. Mark it received, run the trip, mark it done. Commission accrues on completed trips only." },
 ];
@@ -44,15 +44,15 @@ const STEPS = [
 const FAQ = [
   {
     q: "What does it cost?",
-    a: "A small monthly listing fee per published experience plus a commission on completed bookings. Nothing is charged on requests, cancellations or no-shows. Exact figures are set with each operator before launch — see the fees section below.",
+    a: "A small monthly listing fee per published experience plus a commission on completed bookings. Nothing is charged on requests, cancellations or no-shows. Exact figures are set with each operator before launch; see the fees section below.",
   },
   {
     q: "Who handles cancellations?",
-    a: "Your cancellation policy, enforced by Guidr. You choose one of three presets — flexible (24 h), moderate (48 h) or strict (7 days) — and the platform handles the messaging and the timing.",
+    a: "Your cancellation policy, enforced by Guidr. You choose one of three presets: flexible (24 h), moderate (48 h) or strict (7 days), and the platform handles the messaging and the timing.",
   },
   {
     q: "Do I need to be online all day?",
-    a: "No. Requests expire automatically if you cannot respond within 24 hours — but operators who confirm within four hours in the daytime convert about twice as often. WhatsApp notifications are enough.",
+    a: "No. Requests expire automatically if you cannot respond within 24 hours, but operators who confirm within four hours in the daytime convert about twice as often. WhatsApp notifications are enough.",
   },
   {
     q: "What about payments?",
@@ -83,7 +83,7 @@ export default function ForOperatorsPage() {
               More bookings, without more admin.
             </h1>
             <p className="mt-5 max-w-[52ch] text-[18px] leading-[28px] text-white/85">
-              Guidr sends you ready travellers — dated, sized and informed —
+              Guidr sends you ready travellers, dated, sized and informed,
               straight to the WhatsApp you already answer. You keep your
               prices, your policies and your money.
             </p>
@@ -162,13 +162,13 @@ export default function ForOperatorsPage() {
                 Guidr charges a small monthly fee per published listing and a
                 commission on completed bookings. Requests, declines,
                 cancellations and no-shows cost you nothing. Invoices arrive
-                twice a month, payable by EFT or payment link — the same
+                twice a month, payable by EFT or payment link, the same
                 methods you offer your travellers.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   "Commission accrues only when a booking reaches COMPLETED",
-                  "No card processing fees — travellers pay you directly",
+                  "No card processing fees: travellers pay you directly",
                   "No lock-in: pause or unpublish any month",
                   "First 90 days of listing fees waived for launch operators",
                 ].map((item) => (
@@ -180,7 +180,7 @@ export default function ForOperatorsPage() {
               </ul>
               <p className="mt-6 rounded-md bg-bone-50 p-4 text-[14px] leading-relaxed text-ink-500">
                 Exact fee and commission figures are finalised with each
-                operator before launch. Nothing on this page is a contract —
+                operator before launch. Nothing on this page is a contract;
                 the operator agreement is.
               </p>
             </div>
@@ -205,7 +205,7 @@ export default function ForOperatorsPage() {
                 </div>
               </dl>
               <p className="mt-6 text-[13px] leading-relaxed text-ink-500">
-                Illustrative only — a mid-size coast operator's shoulder
+                Illustrative only: a mid-size coast operator's shoulder
                 season. Your numbers depend on your prices and your calendar.
               </p>
             </div>
@@ -244,8 +244,8 @@ export default function ForOperatorsPage() {
                 Bring your trips to the launch catalogue
               </h2>
               <p className="mt-4 max-w-[56ch] text-[16px] leading-relaxed text-white/80">
-                We are onboarding the first cohort of coast operators now —
-                launch partners get three months of listing fees waived and
+                We are onboarding the first cohort of coast operators now.
+                Launch partners get three months of listing fees waived and
                 founding-operator placement on the home page.
               </p>
               <ul className="mt-5 space-y-2.5">
@@ -260,8 +260,8 @@ export default function ForOperatorsPage() {
             <div className="rounded-xl bg-white p-6 sm:p-8">
               <h3 className="text-[18px] font-semibold text-ink">Start the conversation</h3>
               <p className="mt-2 text-[14px] leading-relaxed text-ink-700">
-                The fastest path is WhatsApp. Tell us what you run and where —
-                we reply within a working day.
+                The fastest path is WhatsApp. Tell us what you run and where.
+                We reply within a working day.
               </p>
               <div className="mt-5 space-y-3">
                 <WhatsAppButton

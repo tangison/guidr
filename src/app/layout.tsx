@@ -15,8 +15,8 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL("https://getguidr.com"),
   title: {
-    default: "Guidr — Guided tours and activities in Namibia",
-    template: "%s — Guidr",
+    default: "Guidr: Guided tours and activities in Namibia",
+    template: "%s · Guidr",
   },
   description:
     "Discover and request guided tours and activities across Namibia. Curated local operators, honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Guidr" }],
   openGraph: {
-    title: "Guidr — Guided tours and activities in Namibia",
+    title: "Guidr: Guided tours and activities in Namibia",
     description:
       "Curated local operators, honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
     url: "https://getguidr.com",
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Guidr — Namibia, guided properly. Curated local operators, honest prices, WhatsApp-first booking.",
+        alt: "Guidr: Namibia, guided properly. Curated local operators, honest prices, WhatsApp-first booking.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guidr — Guided tours and activities in Namibia",
+    title: "Guidr: Guided tours and activities in Namibia",
     description:
       "Curated local operators, honest prices, WhatsApp-first booking.",
     images: ["/og.jpg"],
@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col`}
+        className={`${poppins.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col overflow-x-clip`}
       >
         <a
           href="#main"

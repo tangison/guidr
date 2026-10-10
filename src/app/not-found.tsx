@@ -13,7 +13,7 @@ export default function NotFound() {
           The trail ends here.
         </h1>
         <p className="mt-4 max-w-[46ch] text-[16px] leading-relaxed text-ink-700">
-          This page does not exist — or it wandered off like everything else
+          This page does not exist, or it wandered off like everything else
           in the desert. The map below gets you back on track.
         </p>
         <form action="/experiences" method="get" role="search" aria-label="Search experiences" className="mt-8 flex w-full max-w-md gap-2.5">

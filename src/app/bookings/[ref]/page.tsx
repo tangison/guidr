@@ -95,7 +95,7 @@ export default async function BookingPage({
               <p className="mt-1.5 text-[15px] leading-relaxed text-ink-700">
                 {exp.operator.name} usually confirms within four hours in the
                 daytime, and always within 24 hours. We have emailed the
-                details to {booking.travellerEmail} — keep this page for the
+                details to {booking.travellerEmail}. Keep this page for the
                 live status.
               </p>
             </div>
@@ -279,7 +279,7 @@ export default async function BookingPage({
               </p>
               <div className="mt-4 space-y-3">
                 <WhatsAppButton
-                  message={`Hi Guidr, about booking ${booking.ref} (${exp.title}) — I have a question.`}
+                  message={`Hi Guidr, about booking ${booking.ref} (${exp.title}): I have a question.`}
                   className="w-full"
                 />
                 <a
@@ -301,7 +301,7 @@ export default async function BookingPage({
                 How payment works
               </h2>
               <p className="mt-2 text-[14px] leading-relaxed text-ink-700">
-                After the operator confirms, you pay them directly — by bank
+                After the operator confirms, you pay them directly: by bank
                 transfer with a proof-of-payment upload, or through the
                 operator's own payment link. Guidr never holds your money.
               </p>

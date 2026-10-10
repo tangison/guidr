@@ -52,7 +52,7 @@ export async function generateMetadata({
     title: exp.title,
     description: exp.summary,
     openGraph: {
-      title: `${exp.title} — Guidr`,
+      title: `${exp.title} · Guidr`,
       description: exp.summary,
       images: [{ url: exp.heroImage }],
     },
@@ -194,7 +194,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
                 <div key={img} className="relative aspect-[4/3] overflow-hidden rounded-lg sm:aspect-auto sm:min-h-0">
                   <Image
                     src={img}
-                    alt={`${exp.title} — view ${i + 2}`}
+                    alt={`${exp.title}, view ${i + 2}`}
                     fill
                     sizes="(max-width: 640px) 33vw, 33vw"
                     className="object-cover"

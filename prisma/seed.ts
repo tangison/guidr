@@ -2,7 +2,6 @@ import { PrismaClient } from "@prisma/client";
 import { SEED_DESTINATIONS, SEED_OPERATORS } from "./seed-data";
 import { SEED_EXPERIENCES } from "./seed-experiences";
 import { SEED_EXPERIENCES_2 } from "./seed-experiences-2";
-import { SEED_REVIEWS } from "./seed-reviews";
 
 const db = new PrismaClient();
 
@@ -96,26 +95,7 @@ async function main() {
     });
   }
   console.log(`  ${all.length} experiences`);
-
-  // Reviews
-  for (const r of SEED_REVIEWS) {
-    const exp = await db.experience.findUnique({ where: { slug: r.experienceSlug } });
-    if (!exp) throw new Error(`Experience ${r.experienceSlug} not found`);
-    await db.review.create({
-      data: {
-        experienceId: exp.id,
-        authorName: r.authorName,
-        authorCountry: r.authorCountry,
-        partyType: r.partyType,
-        rating: r.rating,
-        title: r.title,
-        text: r.text,
-        travelDate: r.travelDate,
-        isDemo: true,
-      },
-    });
-  }
-  console.log(`  ${SEED_REVIEWS.length} demo reviews`);
+  console.log("  0 reviews (synthetic testimonials removed; real reviews arrive with verified bookings)");
   console.log("Done.");
 }
 

@@ -39,7 +39,7 @@ export function RatingBadge({
 }) {
   if (count === 0) {
     return (
-      <span className="text-[14px] text-ink-500">New listing — no reviews yet</span>
+      <span className="text-[14px] text-ink-500">New listing, no reviews yet</span>
     );
   }
   return (

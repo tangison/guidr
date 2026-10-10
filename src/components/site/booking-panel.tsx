@@ -78,7 +78,7 @@ function BookingForm({ props, date, guests }: { props: PanelProps; date: string;
         </label>
         <input id="travellerWhatsapp" name="travellerWhatsapp" type="tel" autoComplete="tel" className={inputClass} placeholder="+264 …" />
         <p className="text-[13px] text-ink-500">
-          The operator replies on WhatsApp — the fastest path to a yes.
+          The operator replies on WhatsApp, the fastest path to a yes.
         </p>
       </div>
 
@@ -182,7 +182,7 @@ export function BookingPanel(props: PanelProps) {
         </div>
         <p className="pt-1 text-[13px] text-ink-500">
           Final price is set by the operator when they confirm. Guidr never
-          holds your money — you pay the operator directly.
+          holds your money; you pay the operator directly.
         </p>
       </dl>
 
@@ -202,7 +202,7 @@ export function BookingPanel(props: PanelProps) {
               Request to book
             </DialogTitle>
             <DialogDescription className="text-left text-[14px] leading-relaxed text-ink-700">
-              {props.title} — {guests} {guests === 1 ? "guest" : "guests"}
+              {props.title}: {guests} {guests === 1 ? "guest" : "guests"}
               {date ? `, ${date}` : ""}. The operator confirms within 24 hours,
               then you arrange payment directly with them.
             </DialogDescription>

@@ -55,14 +55,14 @@ export function destinationDriveTimes(
   return parseJson<{ from: string; time: string }[]>(d.driveTimes, []);
 }
 
-/** Home page: featured experiences (8 cards). */
+/** Home page: featured experiences (8 cards, curated insertion order). */
 export async function getFeaturedExperiences(): Promise<
   ExperienceWithRelations[]
 > {
   return db.experience.findMany({
     where: { featured: true },
     include: { destination: true, operator: true },
-    orderBy: [{ rating: "desc" }],
+    orderBy: [{ createdAt: "asc" }],
     take: 8,
   });
 }
@@ -71,7 +71,7 @@ export async function getFeaturedExperiences(): Promise<
 export async function getAllExperiences(): Promise<ExperienceWithRelations[]> {
   return db.experience.findMany({
     include: { destination: true, operator: true },
-    orderBy: [{ featured: "desc" }, { rating: "desc" }],
+    orderBy: [{ featured: "desc" }, { createdAt: "asc" }],
   });
 }
 
@@ -98,7 +98,7 @@ export async function getSimilarExperiences(
       ],
     },
     include: { destination: true, operator: true },
-    orderBy: { rating: "desc" },
+    orderBy: { createdAt: "asc" },
     take,
   });
 }
@@ -109,7 +109,7 @@ export async function getExperiencesByDestination(
   return db.experience.findMany({
     where: { destinationSlug },
     include: { destination: true, operator: true },
-    orderBy: { rating: "desc" },
+    orderBy: { createdAt: "asc" },
   });
 }
 
@@ -130,15 +130,6 @@ export async function getExperienceReviews(experienceId: string) {
     where: { experienceId },
     orderBy: { createdAt: "desc" },
     take: 6,
-  });
-}
-
-export async function getRecentReviews(limit = 6) {
-  return db.review.findMany({
-    where: { rating: { gte: 4 } },
-    include: { experience: true },
-    orderBy: { createdAt: "desc" },
-    take: limit,
   });
 }
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const TRAVELLER_STEPS = [
   { icon: Search, title: "Find it", text: "Search by place, date and pace. Filters for family-friendly, duration and price. Every listing states its cancellation policy up front." },
   { icon: MessageCircle, title: "Request it", text: "One form sends your dates, party size and any notes. No account needed; a WhatsApp number speeds everything up." },
-  { icon: ClipboardCheck, title: "Get the yes", text: "The operator confirms — usually within four hours in the daytime, always within 24. If they cannot take the date, we offer alternatives." },
+  { icon: ClipboardCheck, title: "Get the yes", text: "The operator confirms, usually within four hours in the daytime, always within 24. If they cannot take the date, we offer alternatives." },
   { icon: CalendarCheck2, title: "Take the trip", text: "A voucher with the meeting point, the guide's contact and the plan. After the trip, a review helps the next traveller." },
 ];
 
@@ -85,8 +85,8 @@ export default function HowItWorksPage() {
             ))}
           </div>
           <p className="mt-8 border-t border-white/15 pt-6 text-[14px] leading-relaxed text-white/70">
-            If anything goes wrong — a late reply, a dispute, a refund question
-            — the booking thread keeps every event, and the Guidr team can
+            If anything goes wrong (a late reply, a dispute, a refund question),
+            the booking thread keeps every event, and the Guidr team can
             step in and read exactly what happened.
           </p>
         </section>
@@ -126,8 +126,8 @@ export default function HowItWorksPage() {
           <div>
             <h2 className="text-[24px] font-bold text-ink">Still deciding?</h2>
             <p className="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-ink-700">
-              Ask the planner to sketch a plan for your dates — it only uses
-              real catalogue experiences and honest prices — or message a
+              Ask the planner to sketch a plan for your dates: it only uses
+              real catalogue experiences and honest prices, or message a
               human on WhatsApp.
             </p>
           </div>

@@ -32,6 +32,19 @@ with sync_playwright() as p:
             try:
                 page.goto(BASE + path, wait_until="networkidle", timeout=30000)
                 page.wait_for_timeout(600)
+                # Scroll through the page so scroll-reveal motion settles,
+                # then return to the top before the full-page capture.
+                page.evaluate("""
+                    async () => {
+                        const h = document.body.scrollHeight;
+                        for (let y = 0; y <= h; y += 400) {
+                            window.scrollTo(0, y);
+                            await new Promise(r => setTimeout(r, 40));
+                        }
+                        window.scrollTo(0, 0);
+                        await new Promise(r => setTimeout(r, 250));
+                    }
+                """)
                 page.screenshot(path=f"{OUT}/{name}-{tag}.png", full_page=True)
                 print(f"OK  {name}-{tag}")
             except Exception as e:
