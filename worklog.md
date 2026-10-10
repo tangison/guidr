@@ -60,3 +60,24 @@ Stage Summary:
 - The site now carries the user's REAL logo and assets everywhere (header, footer, about, favicon, apple-icon, OG card, print-quality lockup)
 - Taste-passed against the Guidr design system: on-scale type and spacing, one-accent discipline, meaningful footprint motif, touch targets, honest truncation with click-through
 - Deliverables: real-geometry logo components, og.jpg, icon.svg, apple-icon.png, tangison-light-64.png, QA scripts under scripts/qa + scripts/brandkit
+
+---
+Task ID: 4
+Agent: Super Z (main agent)
+Task: Ultra-taste pass per gpt-taste skill: remove all stock images, remove all the nonsense, use the user's own brand assets, Tangison webmaster checklist compliance, GitHub + Vercel delivery
+
+Work Log:
+- Ran `npx skills use "https://github.com/leonxlnx/taste-skill" --skill "gpt-taste"` (output captured to /tmp/gpt-taste.txt, complete SKILL.md read)
+- design_plan emitted per skill protocol: RNG seed 99 selected Artistic Asymmetry hero, Horizontal Accordions + Bento Interlock + Inline Typography Images components, Image Scale & Fade + Scroll Pinning GSAP paradigms; typography override to Poppins per Tangison precedence (logo-derived)
+- Generated 25 custom art-directed Namibia images (one consistent terracotta/bone/ink/mustard film grade) via z-ai image API; 2 failed VLM QA (catamaran boat geometry, kolmanskop architecture) and were regenerated with simplified subjects; all pass now; optimized to 73-243 KB progressive JPGs; ALL fetched stock photos and people/ portraits purged (21 files)
+- Nonsense removed: synthetic reviews (seed deleted, DB re-seeded with 0), fabricated ratings zeroed, planner no longer carries rating fields, em dashes swept from every user-visible string across 20+ files (contextual replacements: colon/comma/brackets)
+- Ultra-taste build: asymmetric hero (bone field, 2-line clamp H1, floating image panel overlapping bottom-right, search straddling the seam, GSAP parallax), interlocked bento grids (catalogue 12-cell math, destinations 12-cell math, grid-flow-dense, verified zero dead cells), SceneAccordions (Coast/Desert/Wild horizontal accordions, keyboard accessible), PinnedManifesto (GSAP ScrollTrigger pinned statement + scrolling gallery with inline pill photography), Reveal/ScrollScaleMedia/HeroParallax motion system gated by prefers-reduced-motion, footprint steps replacing ghost numerals, brand bar, grain overlays
+- Tangison webmaster checklist: /brand page (marks, colour tokens, type scale, art direction, rules, SVG asset downloads), /privacy-policy + /terms canonical with 308 redirects from /legal/*, branded error.tsx (500) + global-error.tsx, sitemap.ts (dynamic from DB), manifest.ts, favicon.ico, robots.txt sitemap line, Made by Tangison Studio credit, footer/nav links updated
+- Fixed missing images audit found: experiences/etosha.jpg never generated (generated new waterhole scene), experiences/hero-dunes.jpg gallery refs repointed to /images/hero-dunes.jpg
+- QA: lint clean, 22 routes 200 + 404 correct, redirects 308, golden paths browser-verified (search, booking flow GDR-226X3J0DG, planner reply with cards, waitlist, accordion hover), VLM critiques: desktop SHIP, mobile SHIP (0px horizontal overflow), production live SHIP
+- Deployment: .env untracked, instrumentation.ts (serverless SQLite bootstrap to /tmp), vercel.json build command, .vercelignore; committed (215 files) and pushed to github.com/tangison/guidr; Vercel project guidr created, DATABASE_URL secret set, deployed to https://guidr-eta.vercel.app (production protection disabled, all routes 200 live, waitlist API writing live)
+
+Stage Summary:
+- Guidr rebuilt with ultra taste: zero stock images, zero synthetic content, one consistent art direction, award-level motion, honest pre-launch data
+- Live at https://guidr-eta.vercel.app and pushed to https://github.com/tangison/guidr
+- Known Vercel limitation: AI planner falls back to its honest error message unless the Z.ai SDK key is added as a Vercel env var; all other flows work end-to-end

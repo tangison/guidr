@@ -1,0 +1,17 @@
+# Keep the Vercel deployment lean: exclude sandbox-only directories and logs.
+# The database (db/) and public/ are required at build and runtime.
+scripts
+upload
+tool-results
+tests
+examples
+download
+mini-services
+.claude
+.env
+.env.local
+.env.*.local
+*.log
+dev.log
+server.log
+worklog.md
