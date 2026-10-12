@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { z } from "zod";
 import { createBookingRequest } from "@/lib/data";
 
@@ -64,6 +65,35 @@ export async function requestBooking(
     guests: d.guests,
     notes: d.notes || undefined,
   });
+
+  // On serverless hosting the write and the redirect can land on different
+  // instances, so the confirmation page may not find the booking in its own
+  // database yet. A short-lived receipt cookie lets it render the
+  // confirmation from the request itself. The cookie is httpOnly, carries
+  // only the traveller's own booking data, and expires in 15 minutes.
+  const exp = booking.experience;
+  const jar = await cookies();
+  jar.set(
+    "gdr_receipt",
+    JSON.stringify({
+      ref: booking.ref,
+      status: booking.status,
+      travellerEmail: booking.travellerEmail,
+      date: booking.date,
+      guests: booking.guests,
+      notes: booking.notes,
+      totalPriceMinor: booking.totalPriceMinor,
+      currency: booking.currency,
+      experience: {
+        slug: exp.slug,
+        title: exp.title,
+        durationMinutes: exp.durationMinutes,
+        meetingPoint: exp.meetingPoint,
+        operator: { name: exp.operator.name, whatsapp: exp.operator.whatsapp },
+      },
+    }),
+    { httpOnly: true, sameSite: "lax", maxAge: 900, path: "/" }
+  );
 
   redirect(`/bookings/${booking.ref}?sent=1`);
 }

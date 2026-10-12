@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import {
   CheckCircle2,
   Clock3,
@@ -22,6 +23,30 @@ export const metadata: Metadata = {
 
 type Params = Promise<{ ref: string }>;
 type Search = Promise<{ sent?: string }>;
+
+/**
+ * The normalized view the confirmation renders from. It comes from the
+ * database normally, or from the short-lived receipt cookie set by the
+ * server action when the write and the redirect land on different
+ * serverless instances.
+ */
+type BookingView = {
+  ref: string;
+  status: string;
+  travellerEmail: string;
+  date: string;
+  guests: number;
+  notes: string | null;
+  totalPriceMinor: number;
+  currency: string;
+  experience: {
+    slug: string;
+    title: string;
+    durationMinutes: number;
+    meetingPoint: string;
+    operator: { name: string; whatsapp: string };
+  };
+};
 
 const STEPS = [
   { key: "requested", label: "Request sent", hint: "The operator has your request." },
@@ -57,7 +82,20 @@ export default async function BookingPage({
 }) {
   const { ref } = await params;
   const { sent } = await searchParams;
-  const booking = await getBookingByRef(ref);
+  let booking: BookingView | null = await getBookingByRef(ref);
+  let fromReceipt = false;
+  if (!booking && sent) {
+    try {
+      const jar = await cookies();
+      const receipt = JSON.parse(jar.get("gdr_receipt")?.value ?? "null");
+      if (receipt && receipt.ref === ref) {
+        booking = receipt as BookingView;
+        fromReceipt = true;
+      }
+    } catch {
+      // malformed cookie: fall through to the 404
+    }
+  }
   if (!booking) notFound();
 
   const exp = booking.experience;
@@ -98,6 +136,12 @@ export default async function BookingPage({
                 details to {booking.travellerEmail}. Keep this page for the
                 live status.
               </p>
+              {fromReceipt && (
+                <p className="mt-2 text-[13px] text-ink-500">
+                  This confirmation comes straight from your request; the
+                  live status catches up here shortly.
+                </p>
+              )}
             </div>
           </div>
         )}
