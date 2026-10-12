@@ -27,13 +27,13 @@ export default function Error({
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             onClick={reset}
-            className="inline-flex h-12 items-center rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+            className="btn btn-primary btn-lg"
           >
             Try again
           </button>
           <Link
             href="/"
-            className="inline-flex h-12 items-center rounded-md border border-line-strong bg-white px-6 text-[15px] font-semibold text-ink transition-colors hover:bg-bone focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+            className="btn btn-outline btn-lg"
           >
             Back to the home page
           </Link>
@@ -47,7 +47,7 @@ export default function Error({
             <Link
               key={l.href}
               href={l.href}
-              className="inline-flex h-11 items-center rounded-full border border-line bg-white px-5 text-[15px] font-medium text-ink-700 transition-colors hover:bg-bone hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+              className="btn btn-outline btn-md !font-medium"
             >
               {l.label}
             </Link>

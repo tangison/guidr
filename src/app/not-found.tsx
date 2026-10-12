@@ -44,7 +44,7 @@ export default function NotFound() {
             <Link
               key={l.href}
               href={l.href}
-              className="inline-flex h-11 items-center rounded-full border border-line bg-white px-5 text-[15px] font-medium text-ink-700 transition-colors hover:bg-bone hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+              className="btn btn-outline btn-md !font-medium"
             >
               {l.label}
             </Link>

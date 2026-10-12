@@ -21,17 +21,17 @@ export function WhatsAppButton({
 }) {
   const sizing =
     size === "lg"
-      ? "h-12 px-6 text-[15px]"
+      ? "btn-lg"
       : size === "sm"
-        ? "h-9 px-4 text-[13px]"
-        : "h-11 px-5 text-[15px]";
+        ? "btn-sm"
+        : "btn-md";
   return (
     <a
       href={waLink(message, phone)}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md bg-ink font-semibold text-white transition-colors hover:bg-ink-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700",
+        "btn btn-ink",
         sizing,
         className
       )}

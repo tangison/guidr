@@ -73,7 +73,7 @@ export function SceneAccordions({ scenes }: { scenes: Scene[] }) {
 
               {/* Expanded content */}
               <div
-                className={`absolute inset-x-0 bottom-0 p-6 sm:p-8 transition-all duration-500 ease-[cubic-bezier(0.2,0,0,1)] ${
+                className={`absolute inset-x-0 bottom-0 p-6 sm:p-8 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.2,0,0,1)] ${
                   isActive
                     ? "translate-y-0 opacity-100"
                     : "lg:translate-y-4 lg:opacity-0"
@@ -84,7 +84,7 @@ export function SceneAccordions({ scenes }: { scenes: Scene[] }) {
                   {scene.title}
                 </h3>
                 <p
-                  className={`mt-3 max-w-[46ch] text-[15px] leading-relaxed text-white/85 transition-all delay-100 duration-500 ${
+                  className={`mt-3 max-w-[46ch] text-[15px] leading-relaxed text-white/85 transition-opacity delay-100 duration-500 ${
                     isActive ? "opacity-100" : "opacity-0"
                   }`}
                 >
@@ -92,7 +92,7 @@ export function SceneAccordions({ scenes }: { scenes: Scene[] }) {
                 </p>
                 <Link
                   href={scene.link.href}
-                  className="mt-5 inline-flex h-11 items-center gap-2 rounded-md bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="btn btn-white btn-md"
                 >
                   {scene.link.label}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />

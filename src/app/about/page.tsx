@@ -83,7 +83,7 @@ export default function AboutPage() {
             <WhatsAppButton message="Hi Guidr, I have a question." size="lg" />
             <Link
               href="mailto:hello@getguidr.com"
-              className="inline-flex h-12 items-center rounded-md border border-line-strong bg-white px-6 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+              className="btn btn-outline btn-lg"
             >
               hello@getguidr.com
             </Link>

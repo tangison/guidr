@@ -5,16 +5,18 @@ import { gsap, useGSAP, MOTION_OK } from "@/lib/gsap";
 
 /**
  * Reveal — entrance motion for blocks, headings and cards.
- * Elements rest at opacity 0 / y 24 / scale 0.97 and settle into place the
- * first time they enter the viewport. Falls back to fully visible content
- * when JS is off or the user prefers reduced motion (the resting styles are
- * applied by GSAP only, never by CSS, so SSR content is always visible).
+ * Premium fade recipe (scroll-craft taste floor): opacity 0, a rise of
+ * about 16px and a 0.97 scale settle over ~620ms on a hard ease-out,
+ * triggered slightly inside the viewport, fired once. Falls back to
+ * fully visible content when JS is off or the user prefers reduced
+ * motion (the resting styles are applied by GSAP only, never by CSS,
+ * so SSR content is always visible).
  */
 export function Reveal({
   children,
   className = "",
   delay = 0,
-  y = 28,
+  y = 16,
   scale = 0.97,
   once = true,
 }: {
@@ -40,9 +42,9 @@ export function Reveal({
             autoAlpha: 1,
             y: 0,
             scale: 1,
-            duration: 0.9,
+            duration: 0.62,
             delay,
-            ease: "power2.out",
+            ease: "power3.out",
             scrollTrigger: {
               trigger: el,
               start: "top 88%",
@@ -60,6 +62,66 @@ export function Reveal({
     <div ref={ref} className={className}>
       {children}
     </div>
+  );
+}
+
+/**
+ * Stagger — the group-entrance device. Direct children rise in with a
+ * 30–80ms stagger in reading order (scroll-craft taste floor). Use for
+ * card grids, step rows and chip clusters. Same SSR / reduced-motion
+ * safety as Reveal: GSAP applies the resting state, never CSS.
+ */
+export function Stagger({
+  children,
+  className = "",
+  step = 60,
+  y = 16,
+  as = "div",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  step?: number;
+  y?: number;
+  as?: "div" | "ol" | "ul";
+}) {
+  const ref = React.useRef<HTMLElement>(null);
+  const Tag = as;
+
+  useGSAP(
+    () => {
+      const el = ref.current;
+      if (!el) return;
+      const items = Array.from(el.children);
+      if (items.length === 0) return;
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        gsap.fromTo(
+          items,
+          { autoAlpha: 0, y, scale: 0.98 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.62,
+            ease: "power3.out",
+            stagger: Math.min(step, 80) / 1000,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 86%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+        return () => mm.revert();
+      });
+    },
+    { scope: ref }
+  );
+
+  return (
+    <Tag ref={ref} className={className}>
+      {children}
+    </Tag>
   );
 }
 

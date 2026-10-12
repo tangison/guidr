@@ -38,7 +38,7 @@ export function ExperienceCard({
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
         />
         {experience.isDemo && (
-          <span className="absolute left-3 top-3 rounded-sm bg-white/90 px-2.5 py-1 text-[12px] font-medium tracking-wide text-ink-700 uppercase">
+          <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[12px] font-medium tracking-wide text-ink-700 uppercase">
             Demo listing
           </span>
         )}

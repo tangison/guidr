@@ -57,7 +57,7 @@ export function ExperienceFilters({
         aria-label="Search experiences"
         className="flex gap-2.5"
       >
-        <label className="flex h-12 flex-1 items-center gap-2.5 rounded-md border border-line bg-white px-4 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
+        <label className="flex h-12 flex-1 items-center gap-2.5 rounded-full border border-line bg-white px-5 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
           <Search className="h-4 w-4 shrink-0 text-ink-500" aria-hidden="true" />
           <span className="sr-only">Search experiences</span>
           <input
@@ -70,7 +70,7 @@ export function ExperienceFilters({
         </label>
         <button
           type="submit"
-          className="h-12 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+          className="btn btn-primary btn-lg"
         >
           Search
         </button>
@@ -87,7 +87,7 @@ export function ExperienceFilters({
           <select
             value={current.destination}
             onChange={(e) => update({ destination: e.target.value })}
-            className="h-10 cursor-pointer rounded-md border border-line bg-white px-3 pr-8 text-[14px] text-ink focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
+            className="h-10 cursor-pointer rounded-full border border-line bg-white px-4 pr-9 text-[14px] text-ink focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
           >
             <option value="all">All destinations</option>
             {destinations.map((d) => (
@@ -103,7 +103,7 @@ export function ExperienceFilters({
           <select
             value={current.sort}
             onChange={(e) => update({ sort: e.target.value })}
-            className="h-10 cursor-pointer rounded-md border border-line bg-white px-3 pr-8 text-[14px] text-ink focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
+            className="h-10 cursor-pointer rounded-full border border-line bg-white px-4 pr-9 text-[14px] text-ink focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
           >
             {SORTS.map((s) => (
               <option key={s.value} value={s.value}>
@@ -119,7 +119,7 @@ export function ExperienceFilters({
               setQ("");
               router.push(pathname, { scroll: false });
             }}
-            className="inline-flex h-10 items-center gap-1.5 rounded-md px-3 text-[14px] font-medium text-terracotta-700 hover:bg-terracotta-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+            className="btn btn-ghost h-10 !px-4 !text-[14px] !font-medium !text-terracotta-700 hover:!bg-terracotta-50 hover:!text-terracotta-700"
           >
             <X className="h-4 w-4" aria-hidden="true" />
             Clear all

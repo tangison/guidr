@@ -72,6 +72,25 @@ export function PinnedManifesto({
           anticipatePin: 1,
         });
 
+        // The pinned statement drifts slowly upward while the gallery
+        // travels past it: differential motion inside the pin, so the
+        // ink field below the copy never sits statically dead.
+        const inner = left.querySelector("[data-manifesto-inner]") ?? left;
+        gsap.fromTo(
+          inner,
+          { y: 28 },
+          {
+            y: -72,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top top+64",
+              end: () => `+=${right.offsetHeight - left.offsetHeight}`,
+              scrub: 0.6,
+            },
+          }
+        );
+
         // Gallery frames: grow in, darken out (Image Scale & Fade).
         right.querySelectorAll<HTMLElement>("[data-frame]").forEach((frame) => {
           const media = frame.querySelector("[data-scale-target]") ?? frame;
@@ -108,8 +127,8 @@ export function PinnedManifesto({
     <section ref={sectionRef} className="relative bg-ink text-white">
       <div className="mx-auto max-w-[1200px] px-5 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
-          <div ref={leftRef} className="pt-24 pb-16 lg:py-32 lg:sticky-none">
-            {children}
+          <div ref={leftRef} className="pt-24 pb-16 lg:py-32 lg:self-start">
+            <div data-manifesto-inner>{children}</div>
           </div>
           <div ref={rightRef} className="pb-24 lg:pb-32 space-y-20 lg:pt-32">
             {gallery.map((item) => (

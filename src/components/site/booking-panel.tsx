@@ -33,7 +33,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+      className="btn btn-primary btn-lg btn-block"
     >
       {pending && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
       {pending ? "Sending request…" : "Send request"}
@@ -48,7 +48,7 @@ function BookingForm({ props, date, guests }: { props: PanelProps; date: string;
   );
 
   const inputClass =
-    "h-12 w-full rounded-md border border-line bg-bone-50 px-4 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50";
+    "h-12 w-full rounded-full border border-line bg-bone-50 px-5 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50";
 
   return (
     <form action={formAction} className="space-y-4">
@@ -91,7 +91,7 @@ function BookingForm({ props, date, guests }: { props: PanelProps; date: string;
           name="notes"
           rows={3}
           maxLength={2000}
-          className="custom-scroll w-full resize-none rounded-md border border-line bg-bone-50 px-4 py-3 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
+          className="custom-scroll w-full resize-none rounded-2xl border border-line bg-bone-50 px-5 py-3.5 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
           placeholder="Pickup question, dietary needs, kids' ages…"
         />
       </div>
@@ -140,7 +140,7 @@ export function BookingPanel(props: PanelProps) {
       </p>
 
       <div className="mt-5 space-y-3">
-        <label className="flex h-12 items-center gap-3 rounded-md border border-line bg-bone-50 px-4 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
+        <label className="flex h-12 items-center gap-3 rounded-full border border-line bg-bone-50 px-5 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
           <CalendarDays className="h-4 w-4 shrink-0 text-ink-500" aria-hidden="true" />
           <span className="sr-only">Date</span>
           <input
@@ -151,7 +151,7 @@ export function BookingPanel(props: PanelProps) {
             className="w-full cursor-pointer bg-transparent text-[15px] text-ink focus:outline-none"
           />
         </label>
-        <label className="flex h-12 items-center gap-3 rounded-md border border-line bg-bone-50 px-4 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
+        <label className="flex h-12 items-center gap-3 rounded-full border border-line bg-bone-50 px-5 focus-within:border-terracotta-700 focus-within:ring-2 focus-within:ring-terracotta-50">
           <Users className="h-4 w-4 shrink-0 text-ink-500" aria-hidden="true" />
           <span className="sr-only">Guests</span>
           <select
@@ -192,7 +192,7 @@ export function BookingPanel(props: PanelProps) {
           <button
             disabled={!valid}
             aria-disabled={!valid}
-            className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 disabled:cursor-not-allowed disabled:opacity-40"
+            className="btn btn-primary btn-lg btn-block mt-5"
           >
             Request to book
           </button>

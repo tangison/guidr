@@ -81,7 +81,7 @@ export default async function ExperiencesPage({
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 href="/planner"
-                className="inline-flex h-11 items-center rounded-md bg-terracotta px-5 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                className="btn btn-primary btn-md"
               >
                 Ask the planner
               </Link>

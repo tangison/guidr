@@ -1,0 +1,502 @@
+    50→    50→        "https://instagram.com/getguidr",
+    51→    51→        "https://facebook.com/getguidr",
+    52→    52→      ],
+    53→    53→    },
+    54→    54→  ],
+    55→    55→};
+    56→    56→
+    57→    57→const HOW_IT_WORKS = [
+    58→    58→  {
+    59→    59→    icon: MapPinned,
+    60→    60→    title: "Find it",
+    61→    61→    text: "Search by place, date and pace. Every listing is a real operator with a real price: no teaser rates.",
+    62→    62→  },
+    63→    63→  {
+    64→    64→    icon: MessageCircle,
+    65→    65→    title: "Request it",
+    66→    66→    text: "One tap sends your request. The operator replies on WhatsApp, usually within four hours in the daytime.",
+    67→    67→  },
+    68→    68→  {
+    69→    69→    icon: ClipboardCheck,
+    70→    70→    title: "Confirm it",
+    71→    71→    text: "Your guide confirms the date, the meeting point and the price. You get a clear voucher and a contact.",
+    72→    72→  },
+    73→    73→  {
+    74→    74→    icon: CalendarCheck2,
+    75→    75→    title: "Take the trip",
+    76→    76→    text: "Meet your guide, take the walk, ride or flight. At launch you pay through Guidr and we settle the operator after the trip; while we launch, you pay the operator directly.",
+    77→    77→  },
+    78→    78→];
+    79→    79→
+    80→    80→const SCENES = [
+    81→    81→  {
+    82→    82→    eyebrow: "The coast",
+    83→    83→    title: "Swakopmund and Walvis Bay",
+    84→    84→    text: "Dolphins on the bow wave, seals at the paddle, dunes behind the town. The coast is Namibia's playground, and it is where Guidr launches first.",
+    85→    85→    image: "/images/experiences/catamaran.jpg",
+    86→    86→    alt: "A catamaran cruising the Walvis Bay lagoon with dolphins alongside.",
+    87→    87→    link: { href: "/destinations/swakopmund", label: "Explore the coast" },
+    88→    88→  },
+    89→    89→  {
+    90→    90→    eyebrow: "The desert",
+    91→    91→    title: "Sossusvlei and the big red dunes",
+    92→    92→    text: "Climb Dune 45 at sunrise, drift over the dune sea by balloon, walk the white pan of Deadvlei among 900-year-old trees.",
+    93→    93→    image: "/images/experiences/deadvlei.jpg",
+    94→    94→    alt: "Dead camelthorn trees on the white clay pan of Deadvlei.",
+    95→    95→    link: { href: "/destinations/sossusvlei", label: "Explore the desert" },
+    96→    96→  },
+    97→    97→  {
+    98→    98→    eyebrow: "The wild",
+    99→    99→    title: "Etosha and Damaraland",
+   100→   100→    text: "Sit still at a waterhole as elephant herds drink. Track desert-adapted elephants through riverbeds with trackers who know them by name.",
+   101→   101→    image: "/images/experiences/etosha.jpg",
+   102→   102→    alt: "Elephants drinking at a waterhole in Etosha National Park.",
+   103→   103→    link: { href: "/destinations/etosha", label: "Explore the wild" },
+   104→   104→  },
+   105→   105→];
+   106→   106→
+   107→   107→const MANIFESTO_GALLERY = [
+   108→   108→  {
+   109→   109→    image: "/images/experiences/balloon.jpg",
+   110→   110→    alt: "Hot air balloons drifting over the dune sea at first light.",
+   111→   111→    caption: "Ballooning over the dune sea",
+   112→   112→  },
+   113→   113→  {
+   114→   114→    image: "/images/experiences/desert-elephant.jpg",
+   115→   115→    alt: "A desert-adapted elephant crossing a dry riverbed in Damaraland.",
+   116→   116→    caption: "Desert elephants of Damaraland",
+   117→   117→  },
+   118→   118→  {
+   119→   119→    image: "/images/experiences/kolmanskop.jpg",
+   120→   120→    alt: "A sand-filled abandoned room in the Kolmanskop ghost town.",
+   121→   121→    caption: "Kolmanskop, the sand ghost town",
+   122→   122→  },
+   123→   123→];
+   124→   124→
+   125→   125→export default async function HomePage() {
+   126→   126→  const [experiences, destinations] = await Promise.all([
+   127→   127→    getFeaturedExperiences(),
+   128→   128→    getAllDestinations(),
+   129→   129→  ]);
+   130→   130→
+   131→   131→  return (
+   132→   132→    <>
+   133→   133→      <script
+   134→   134→        type="application/ld+json"
+   135→   135→        dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }}
+   136→   136→      />
+   137→   137→
+   138→   138→      {/* ============ Hero: artistic asymmetry ============ */}
+   139→   139→      <section className="hero-field relative overflow-x-clip">
+   140→   140→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 pt-24 pb-20 sm:pt-32 lg:pt-36 lg:pb-28">
+   141→   141→          <div className="lg:grid lg:grid-cols-12 lg:gap-0">
+   142→   142→            {/* Statement block */}
+   143→   143→            <div className="relative z-10 lg:col-span-7 lg:pt-8 lg:pr-20">
+   144→   144→              <p className="eyebrow text-terracotta-700">
+   145→   145→                Namibia · Launching at the coast
+   146→   146→              </p>
+   147→   147→              <h1 className="mt-5 max-w-[12ch] text-[clamp(2.9rem,6.5vw,5.25rem)] leading-[1.02] font-bold tracking-[-0.02em] text-ink">
+   148→   148→                Namibia, guided properly.
+   149→   149→              </h1>
+   150→   150→              <p className="mt-6 max-w-[44ch] text-[17px] leading-relaxed text-ink-700">
+   151→   151→                Tours and activities run by people who live here. Honest
+   152→   152→                prices, real operators, and one WhatsApp message between you
+   153→   153→                and your guide.
+   154→   154→              </p>
+   155→   155→              <div className="mt-9 flex flex-wrap gap-3">
+   156→   156→                <Link
+   157→   157→                  href="/planner"
+   158→   158→                  className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+   159→   159→                >
+   160→   160→                  Plan my trip
+   161→   161→                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+   162→   162→                </Link>
+   163→   163→                <Link
+   164→   164→                  href="/experiences"
+   165→   165→                  className="inline-flex h-12 items-center rounded-md border border-ink/25 bg-white/60 px-6 text-[15px] font-semibold text-ink transition-colors hover:border-ink hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+   166→   166→                >
+   167→   167→                  Browse experiences
+   168→   168→                </Link>
+   169→   169→              </div>
+   170→   170→              <FootprintTrail
+   171→   171→                className="mt-10 hidden h-9 lg:block"
+   172→   172→                color="var(--terracotta)"
+   173→   173→              />
+   174→   174→            </div>
+   175→   175→
+   176→   176→            {/* Floating image panel, overlapping from the bottom right */}
+   177→   177→            <div className="relative z-[1] mt-10 lg:col-span-5 lg:mt-16 lg:-ml-16">
+   178→   178→              <HeroParallax>
+   179→   179→                <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] shadow-e3 ring-1 ring-ink/10 lg:aspect-[4/5]">
+   180→   180→                  <Image
+   181→   181→                    src="/images/hero-dunes.jpg"
+   182→   182→                    alt="Warm sunrise light over the big red sand dunes of the Namib desert."
+   183→   183→                    fill
+   184→   184→                    priority
+   185→   185→                    fetchPriority="high"
+   186→   186→                    sizes="(max-width: 1024px) 100vw, 42vw"
+   187→   187→                    className="object-cover"
+   188→   188→                  />
+   189→   189→                  <div className="absolute inset-0 bg-gradient-to-t from-ink/20 via-transparent to-transparent" />
+   190→   190→                </div>
+   191→   191→              </HeroParallax>
+   192→   192→            </div>
+   193→   193→          </div>
+   194→   194→
+   195→   195→          {/* Search, straddling the seam */}
+   196→   196→          <div className="relative z-20 mt-8 max-w-3xl lg:-mt-14 lg:ml-24">
+   197→   197→            <SearchBar />
+   198→   198→            <p className="mt-4 pl-3 text-[13px] text-ink-500">
+   199→   199→              Popular right now:{" "}
+   200→   200→              <Link href="/experiences?category=coast" className="underline underline-offset-2 hover:text-ink">
+   201→   201→                dolphin cruises
+   202→   202→              </Link>
+   203→   203→              ,{" "}
+   204→   204→              <Link href="/experiences?category=flights" className="underline underline-offset-2 hover:text-ink">
+   205→   205→                balloon flights
+   206→   206→              </Link>
+   207→   207→              ,{" "}
+   208→   208→              <Link href="/experiences?category=stargazing" className="underline underline-offset-2 hover:text-ink">
+   209→   209→                stargazing
+   210→   210→              </Link>
+   211→   211→            </p>
+   212→   212→          </div>
+   213→   213→        </div>
+   214→   214→      </section>
+   215→   215→
+   216→   216→      {/* ============ Top experiences: interlocked bento ============ */}
+   217→   217→      <section aria-labelledby="top-experiences" className="bg-white">
+   218→   218→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   219→   219→          <div className="flex flex-wrap items-end justify-between gap-4">
+   220→   220→            <Reveal className="max-w-xl">
+   221→   221→              <p className="eyebrow text-terracotta-700">The launch catalogue</p>
+   222→   222→              <h2
+   223→   223→                id="top-experiences"
+   224→   224→                className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-ink"
+   225→   225→              >
+   226→   226→                Trips travellers actually take
+   227→   227→              </h2>
+   228→   228→              <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
+   229→   229→                Sixteen guided experiences across seven destinations, from seal
+   230→   230→                kayaking at dawn to balloons over the dune sea. Demo listings
+   231→   231→                until our first operators go live.
+   232→   232→              </p>
+   233→   233→            </Reveal>
+   234→   234→            <Reveal delay={0.1}>
+   235→   235→              <Link
+   236→   236→                href="/experiences"
+   237→   237→                className="inline-flex h-11 items-center gap-2 rounded-md border border-line-strong bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+   238→   238→              >
+   239→   239→                Browse all experiences
+   240→   240→                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+   241→   241→              </Link>
+   242→   242→            </Reveal>
+   243→   243→          </div>
+   244→   244→          <div className="mt-8">
+   245→   245→            <CategoryChips />
+   246→   246→          </div>
+   247→   247→          {/* Interlock math (lg, 3 cols): card 1 spans 2x2 (4 cells),
+   248→   248→              card 5 spans 2x1 (2 cells), six singles (6 cells) = 12 cells
+   249→   249→              in 4 rows. Zero empty cells, grid-flow-dense applied. */}
+   250→   250→          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 [grid-auto-flow:dense]">
+   251→   251→            {experiences.map((exp, i) => (
+   252→   252→              <Reveal
+   253→   253→                key={exp.id}
+   254→   254→                className={`h-full ${i === 0 ? "sm:col-span-2 lg:row-span-2" : ""} ${
+   255→   255→                  i === 4 ? "sm:col-span-2" : ""
+   256→   256→                }`}
+   257→   257→              >
+   258→   258→                <ExperienceCard
+   259→   259→                  experience={exp}
+   260→   260→                  feature={i === 0}
+   261→   261→                />
+   262→   262→              </Reveal>
+   263→   263→            ))}
+   264→   264→          </div>
+   265→   265→        </div>
+   266→   266→      </section>
+   267→   267→
+   268→   268→      {/* ============ Namibia in three scenes: horizontal accordions ============ */}
+   269→   269→      <section aria-label="Namibia in three scenes" className="bg-bone">
+   270→   270→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   271→   271→          <Reveal className="flex flex-wrap items-end justify-between gap-4 pb-10">
+   272→   272→            <div className="max-w-xl">
+   273→   273→              <p className="eyebrow text-terracotta-700">Namibia in three scenes</p>
+   274→   274→              <h2 className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-ink">
+   275→   275→                Coast. Desert. Wild.
+   276→   276→              </h2>
+   277→   277→              <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
+   278→   278→                One country holds all three. Hover a scene to open it, or tap
+   279→   279→                through to the destination.
+   280→   280→              </p>
+   281→   281→            </div>
+   282→   282→            <FootprintTrail className="hidden h-9 sm:flex" color="var(--sand)" />
+   283→   283→          </Reveal>
+   284→   284→          <SceneAccordions scenes={SCENES} />
+   285→   285→        </div>
+   286→   286→      </section>
+   287→   287→
+   288→   288→      {/* ============ Manifesto: pinned statement with scrolling gallery ============ */}
+   289→   289→      <PinnedManifesto gallery={MANIFESTO_GALLERY}>
+   290→   290→        <p className="eyebrow text-mustard">The long, quiet road</p>
+   291→   291→        <h2 className="mt-5 text-[clamp(2rem,3.6vw,3.4rem)] leading-[1.12] font-bold tracking-[-0.015em] text-white">
+   292→   292→          From the{" "}
+   293→   293→          <InlineImage
+   294→   294→            src="/images/destinations/walvis-bay.jpg"
+   295→   295→            alt="flamingos of the Walvis Bay lagoon"
+   296→   296→          />{" "}
+   297→   297→          cold Atlantic to the{" "}
+   298→   298→          <InlineImage
+   299→   299→            src="/images/experiences/dune45.jpg"
+   300→   300→            alt="sunrise ridge of Dune 45"
+   301→   301→          />{" "}
+   302→   302→          oldest desert on earth.
+   303→   303→        </h2>
+   304→   304→        <p className="mt-6 max-w-[46ch] text-[16px] leading-relaxed text-white/75">
+   305→   305→          Namibia packs a cold-ocean coast, the oldest desert on the planet and
+   306→   306→          big game country into one long, quiet road. The Guidr catalogue walks
+   307→   307→          that road in sixteen guided experiences, every one of them run by an
+   308→   308→          operator who lives along it.
+   309→   309→        </p>
+   310→   310→        <div className="mt-9 flex flex-wrap gap-3">
+   311→   311→          <Link
+   312→   312→            href="/destinations"
+   313→   313→            className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-6 text-[15px] font-semibold text-ink transition-colors hover:bg-bone focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+   314→   314→          >
+   315→   315→            Explore the destinations
+   316→   316→            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+   317→   317→          </Link>
+   318→   318→        </div>
+   319→   319→      </PinnedManifesto>
+   320→   320→
+   321→   321→      {/* ============ Destinations: interlocked bento ============ */}
+   322→   322→      <section aria-labelledby="destinations" className="bg-white">
+   323→   323→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   324→   324→          <Reveal className="max-w-xl">
+   325→   325→            <p className="eyebrow text-terracotta-700">Where we operate</p>
+   326→   326→            <h2
+   327→   327→              id="destinations"
+   328→   328→              className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-ink"
+   329→   329→            >
+   330→   330→              Seven destinations, one country
+   331→   331→            </h2>
+   332→   332→            <p className="mt-4 text-[16px] leading-relaxed text-ink-700">
+   333→   333→              Launching at the coast and expanding inland: each destination
+   334→   334→              with its own guides, seasons and local tips.
+   335→   335→            </p>
+   336→   336→          </Reveal>
+   337→   337→          {/* Interlock math (lg, 4 cols): tile 1 spans 2x2 (4 cells), tiles
+   338→   338→              2 and 3 span 2x1 (4 cells), four singles (4 cells) = 12 cells
+   339→   339→              in 3 rows. Zero empty cells, grid-flow-dense applied. */}
+   340→   340→          <div className="mt-10 grid grid-cols-2 gap-4 [grid-auto-flow:dense] sm:auto-rows-[220px] md:grid-cols-4 lg:auto-rows-[250px]">
+   341→   341→            {destinations.map((d, i) => (
+   342→   342→              <Link
+   343→   343→                key={d.slug}
+   344→   344→                href={`/destinations/${d.slug}`}
+   345→   345→                className={`group relative overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700 ${
+   346→   346→                  i === 0
+   347→   347→                    ? "col-span-2 row-span-2"
+   348→   348→                    : i === 1 || i === 2
+   349→   349→                      ? "col-span-2"
+   350→   350→                      : ""
+   351→   351→                }`}
+   352→   352→              >
+   353→   353→                <Image
+   354→   354→                  src={d.heroImage}
+   355→   355→                  alt={`${d.name}, ${d.region}, Namibia.`}
+   356→   356→                  fill
+   357→   357→                  sizes={
+   358→   358→                    i === 0
+   359→   359→                      ? "(max-width: 768px) 100vw, 50vw"
+   360→   360→                      : "(max-width: 768px) 50vw, 25vw"
+   361→   361→                  }
+   362→   362→                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+   363→   363→                />
+   364→   364→                <div className="absolute inset-0 scrim" />
+   365→   365→                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-5">
+   366→   366→                  <div>
+   367→   367→                    <h3 className="text-[19px] font-semibold text-white">
+   368→   368→                      {d.name}
+   369→   369→                    </h3>
+   370→   370→                    <p className="mt-0.5 text-[13px] text-white/80 line-clamp-1">
+   371→   371→                      {d.tagline}
+   372→   372→                    </p>
+   373→   373→                  </div>
+   374→   374→                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-terracotta">
+   375→   375→                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+   376→   376→                  </span>
+   377→   377→                </div>
+   378→   378→              </Link>
+   379→   379→            ))}
+   380→   380→          </div>
+   381→   381→        </div>
+   382→   382→      </section>
+   383→   383→
+   384→   384→      {/* ============ AI planner teaser ============ */}
+   385→   385→      <section aria-labelledby="planner-teaser" className="grain relative bg-ink">
+   386→   386→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   387→   387→          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
+   388→   388→            <Reveal>
+   389→   389→              <p className="eyebrow text-mustard">The Guidr planner</p>
+   390→   390→              <h2
+   391→   391→                id="planner-teaser"
+   392→   392→                className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-white"
+   393→   393→              >
+   394→   394→                Tell it your days, your people, your budget.
+   395→   395→              </h2>
+   396→   396→              <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-white/80">
+   397→   397→                The planner builds a believable itinerary from real catalogue
+   398→   398→                experiences and honest prices, never invented ones. Ask it to
+   399→   399→                plan three days at the coast for a family of four, then send
+   400→   400→                the whole plan to booking in one go.
+   401→   401→              </p>
+   402→   402→              <div className="mt-9 flex flex-wrap gap-3">
+   403→   403→                <Link
+   404→   404→                  href="/planner"
+   405→   405→                  className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+   406→   406→                >
+   407→   407→                  Try the planner
+   408→   408→                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+   409→   409→                </Link>
+   410→   410→                <WhatsAppButton
+   411→   411→                  message="Hi Guidr, can you help me plan my trip at the coast?"
+   412→   412→                  size="lg"
+   413→   413→                  className="!bg-white/10 hover:!bg-white/20"
+   414→   414→                />
+   415→   415→              </div>
+   416→   416→            </Reveal>
+   417→   417→            {/* Sample conversation */}
+   418→   418→            <Reveal delay={0.15}>
+   419→   419→              <div className="rounded-2xl bg-white p-5 shadow-e3 sm:p-7" aria-hidden="true">
+   420→   420→                <div className="space-y-4">
+   421→   421→                  <div className="flex justify-end">
+   422→   422→                    <p className="max-w-[80%] rounded-lg rounded-br-sm bg-terracotta-50 px-4 py-3 text-[14px] leading-relaxed text-ink">
+   423→   423→                      We have 3 days at the coast in July, two adults and two kids (8 and 11). We like wildlife and easy walks, and our budget is around N$ 4,000 per person for activities.
+   424→   424→                    </p>
+   425→   425→                  </div>
+   426→   426→                  <div className="flex gap-3">
+   427→   427→                    <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink">
+   428→   428→                      <FootprintIcon className="h-5 w-auto" color="var(--mustard)" />
+   429→   429→                    </span>
+   430→   430→                    <div className="max-w-[85%] space-y-3">
+   431→   431→                      <p className="rounded-lg rounded-bl-sm bg-bone-50 px-4 py-3 text-[14px] leading-relaxed text-ink">
+   432→   432→                        Here is a plan that fits your budget:
+   433→   433→                      </p>
+   434→   434→                      <div className="rounded-lg border border-line bg-white p-3.5">
+   435→   435→                        <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-terracotta-700">Day 1 · Walvis Bay</p>
+   436→   436→                        <p className="mt-1 text-[14px] font-semibold text-ink">Dolphin and seal catamaran cruise</p>
+   437→   437→                        <p className="mt-1 text-[13px] text-ink-500">3 h · from N$ 600 pp · ages 6+</p>
+   438→   438→                      </div>
+   439→   439→                      <div className="rounded-lg border border-line bg-white p-3.5">
+   440→   440→                        <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-terracotta-700">Day 2 · Swakopmund</p>
+   441→   441→                        <p className="mt-1 text-[14px] font-semibold text-ink">Living Desert guided walk</p>
+   442→   442→                        <p className="mt-1 text-[13px] text-ink-500">4 h · from N$ 850 pp · easy pace</p>
+   443→   443→                      </div>
+   444→   444→                      <div className="rounded-lg border border-line bg-white p-3.5">
+   445→   445→                        <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-terracotta-700">Day 3 · Swakopmund</p>
+   446→   446→                        <p className="mt-1 text-[14px] font-semibold text-ink">Dune quad biking + sandboarding combo</p>
+   447→   447→                        <p className="mt-1 text-[13px] text-ink-500">2 to 3 h · from N$ 700 pp · passenger seats for kids</p>
+   448→   448→                      </div>
+   449→   449→                    </div>
+   450→   450→                  </div>
+   451→   451→                </div>
+   452→   452→              </div>
+   453→   453→            </Reveal>
+   454→   454→          </div>
+   455→   455→        </div>
+   456→   456→      </section>
+   457→   457→
+   458→   458→      {/* ============ How it works ============ */}
+   459→   459→      <section aria-labelledby="how-it-works" className="bg-bone-50">
+   460→   460→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   461→   461→          <Reveal className="max-w-xl">
+   462→   462→            <p className="eyebrow text-terracotta-700">How it works</p>
+   463→   463→            <h2
+   464→   464→              id="how-it-works"
+   465→   465→              className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-ink"
+   466→   466→            >
+   467→   467→              Four steps, no lock-in
+   468→   468→            </h2>
+   469→   469→          </Reveal>
+   470→   470→          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+   471→   471→            {HOW_IT_WORKS.map((step, i) => (
+   472→   472→              <Reveal key={step.title} delay={i * 0.08} className="h-full">
+   473→   473→                <li className="h-full rounded-2xl border border-line bg-white p-6 transition-shadow duration-300 hover:shadow-e2">
+   474→   474→                  <div className="flex items-center justify-between">
+   475→   475→                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-700">
+   476→   476→                      <step.icon className="h-5 w-5" aria-hidden="true" />
+   477→   477→                    </span>
+   478→   478→                    <span className="flex items-end gap-1" aria-hidden="true">
+   479→   479→                      {Array.from({ length: i + 1 }).map((_, j) => (
+   480→   480→                        <FootprintIcon
+   481→   481→                          key={j}
+   482→   482→                          className="h-5 w-auto"
+   483→   483→                          color={j === i ? "var(--terracotta)" : "var(--sand)"}
+   484→   484→                        />
+   485→   485→                      ))}
+   486→   486→                    </span>
+   487→   487→                  </div>
+   488→   488→                  <h3 className="mt-5 text-[20px] font-semibold text-ink">{step.title}</h3>
+   489→   489→                  <p className="mt-2 text-[14px] leading-relaxed text-ink-700">{step.text}</p>
+   490→   490→                </li>
+   491→   491→              </Reveal>
+   492→   492→            ))}
+   493→   493→          </ol>
+   494→   494→          <Reveal delay={0.2}>
+   495→   495→            <p className="mt-8 flex items-center gap-2 text-[14px] text-ink-500">
+   496→   496→              <Banknote className="h-4 w-4" aria-hidden="true" />
+   497→   497→              Payment is by bank transfer or the operator's own payment link, always direct to the operator.
+   498→   498→            </p>
+   499→   499→          </Reveal>
+   500→   500→        </div>
+   501→   501→      </section>
+   502→   502→
+   503→   503→      {/* ============ For operators ============ */}
+   504→   504→      <section aria-labelledby="operators-cta" className="bg-white">
+   505→   505→        <div className="mx-auto max-w-[1200px] px-5 lg:px-8 py-20 lg:py-32">
+   506→   506→          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+   507→   507→            <ScrollScaleMedia className="relative">
+   508→   508→              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+   509→   509→                <Image
+   510→   510→                  src="/images/experiences/desert-walk.jpg"
+   511→   511→                  alt="A small guided tour group walking across golden desert sand in Namibia."
+   512→   512→                  fill
+   513→   513→                  sizes="(max-width: 1024px) 100vw, 50vw"
+   514→   514→                  data-scale-target
+   515→   515→                  className="object-cover"
+   516→   516→                />
+   517→   517→                <div className="absolute inset-0 scrim" />
+   518→   518→                <div className="absolute bottom-5 left-5 right-5">
+   519→   519→                  <p className="text-[18px] font-semibold text-white">
+   520→   520→                    Requests arrive on WhatsApp.
+   521→   521→                  </p>
+   522→   522→                  <p className="mt-1 text-[14px] text-white/85">
+   523→   523→                    Confirm in one tap. Get paid directly.
+   524→   524→                  </p>
+   525→   525→                </div>
+   526→   526→              </div>
+   527→   527→            </ScrollScaleMedia>
+   528→   528→            <Reveal>
+   529→   529→              <p className="eyebrow text-terracotta-700">For operators</p>
+   530→   530→              <h2
+   531→   531→                id="operators-cta"
+   532→   532→                className="mt-3 text-[28px] leading-[34px] sm:text-[40px] sm:leading-[46px] font-bold tracking-[-0.015em] text-ink"
+   533→   533→              >
+   534→   534→                More bookings, less admin
+   535→   535→              </h2>
+   536→   536→              <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-ink-700">
+   537→   537→                List your guided experiences, keep your own prices, and take
+   538→   538→                requests straight to WhatsApp. A listing fee and a commission
+   539→   539→                on completed bookings, nothing else, with your share settled
+   540→   540→                on an agreed schedule after the trip runs.
+   541→   541→              </p>
+   542→   542→              <ul className="mt-7 space-y-3.5">
+   543→   543→                {[
+   544→   544→                  "Your listing, your price, your cancellation policy",
+   545→   545→                  "Requests and confirmations by WhatsApp and email",
+   546→   546→                  "A calendar that blocks dates and manages capacity",
+   547→   547→                  "Monthly invoices with commission on completed trips only",
+   548→   548→                ].map((item) => (
+   549→   549→                  <li key={item} className="flex items-start gap-3 text-[15px] text-ink-700">
+
+[showing lines 50-549 of 606; use offset=550 with limit to continue reading]

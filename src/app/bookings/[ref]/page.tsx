@@ -332,7 +332,7 @@ export default async function BookingPage({
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md border border-line-strong bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-outline btn-md btn-block"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden="true" />
                   Message the operator

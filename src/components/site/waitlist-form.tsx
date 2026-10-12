@@ -35,7 +35,7 @@ export function WaitlistForm() {
   if (state === "done") {
     return (
       <p
-        className="flex items-center gap-2 rounded-md bg-white/10 px-4 py-3 text-[15px] text-white"
+        className="flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-[15px] text-white"
         role="status"
       >
         <Check className="h-5 w-5 text-white" aria-hidden="true" />
@@ -63,13 +63,13 @@ export function WaitlistForm() {
           placeholder="you@example.com"
           aria-describedby={state === "error" ? "waitlist-error" : undefined}
           aria-invalid={state === "error"}
-          className="h-12 w-full rounded-md bg-white border border-transparent px-4 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white"
+          className="h-12 w-full rounded-full bg-white border border-transparent px-5 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white"
         />
       </label>
       <button
         type="submit"
         disabled={state === "loading"}
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="btn btn-primary btn-lg btn-on-dark"
       >
         {state === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
         Join the waitlist

@@ -136,7 +136,7 @@ export default function HowItWorksPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/planner"
-              className="inline-flex h-12 items-center rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+              className="btn btn-primary btn-lg"
             >
               Try the planner
             </Link>

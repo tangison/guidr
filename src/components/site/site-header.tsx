@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { GuidrLockup } from "@/components/site/logo";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_NUMBER } from "@/lib/whatsapp";
@@ -70,38 +69,31 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className="hidden md:inline-flex h-10 text-[15px] text-ink-700 hover:text-ink"
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+              "Hi Guidr, I have a question about a tour."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost hidden h-10 px-5 text-[15px] font-medium md:inline-flex"
           >
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                "Hi Guidr, I have a question about a tour."
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Ask on WhatsApp
-            </a>
-          </Button>
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            Ask on WhatsApp
+          </a>
           {/* Planner CTA hidden on the planner itself */}
           {!pathname.startsWith("/planner") && (
-            <Button
-              asChild
-              size="sm"
-              className="hidden sm:inline-flex h-10 px-5 bg-terracotta hover:bg-terracotta-700 text-white text-[15px] font-semibold"
+            <Link
+              href="/planner"
+              className="btn btn-primary hidden h-10 px-5 text-[15px] sm:inline-flex"
             >
-              <Link href="/planner">Plan my trip</Link>
-            </Button>
+              Plan my trip
+            </Link>
           )}
 
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <button
-              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-ink hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-terracotta-700"
+              className="btn btn-ghost btn-icon lg:hidden"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               aria-expanded={open}
@@ -116,7 +108,7 @@ export function SiteHeader() {
               <div className="flex h-16 items-center justify-between border-b border-line px-5">
                 <GuidrLockup className="h-11 w-auto" />
                 <button
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink hover:bg-bone-50"
+                  className="btn btn-ghost btn-icon"
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
                 >
@@ -141,28 +133,20 @@ export function SiteHeader() {
                 </Link>
               </nav>
               <div className="mt-auto flex flex-col gap-3 border-t border-line p-5">
-                <Button
-                  asChild
-                  className="h-12 bg-terracotta hover:bg-terracotta-700 text-white text-[15px] font-semibold"
+                <Link href="/planner" className="btn btn-primary btn-lg btn-block">
+                  Plan my trip
+                </Link>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                    "Hi Guidr, I have a question about a tour."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ink btn-lg btn-block"
                 >
-                  <Link href="/planner">Plan my trip</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="secondary"
-                  className="h-12 bg-ink text-white hover:bg-ink-700 text-[15px] font-semibold"
-                >
-                  <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                      "Hi Guidr, I have a question about a tour."
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                    Ask on WhatsApp
-                  </a>
-                </Button>
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  Ask on WhatsApp
+                </a>
               </div>
             </SheetContent>
           </Sheet>

@@ -20,7 +20,7 @@ import {
   PinnedManifesto,
   InlineImage,
 } from "@/components/site/motion/pinned-manifesto";
-import { HeroParallax, ScrollScaleMedia, Reveal } from "@/components/site/motion/reveal";
+import { HeroParallax, ScrollScaleMedia, Reveal, Stagger } from "@/components/site/motion/reveal";
 import {
   getFeaturedExperiences,
   getAllDestinations,
@@ -155,14 +155,14 @@ export default async function HomePage() {
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
                   href="/planner"
-                  className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-primary btn-lg"
                 >
                   Plan my trip
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/experiences"
-                  className="inline-flex h-12 items-center rounded-md border border-ink/25 bg-white/60 px-6 text-[15px] font-semibold text-ink transition-colors hover:border-ink hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-outline btn-lg"
                 >
                   Browse experiences
                 </Link>
@@ -234,7 +234,7 @@ export default async function HomePage() {
             <Reveal delay={0.1}>
               <Link
                 href="/experiences"
-                className="inline-flex h-11 items-center gap-2 rounded-md border border-line-strong bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                className="btn btn-outline btn-md"
               >
                 Browse all experiences
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -247,21 +247,21 @@ export default async function HomePage() {
           {/* Interlock math (lg, 3 cols): card 1 spans 2x2 (4 cells),
               card 5 spans 2x1 (2 cells), six singles (6 cells) = 12 cells
               in 4 rows. Zero empty cells, grid-flow-dense applied. */}
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 [grid-auto-flow:dense]">
+          <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 [grid-auto-flow:dense]" step={60}>
             {experiences.map((exp, i) => (
-              <Reveal
+              <div
                 key={exp.id}
-                className={`h-full ${i === 0 ? "sm:col-span-2 lg:row-span-2" : ""} ${
-                  i === 4 ? "sm:col-span-2" : ""
-                }`}
+                className={`h-full ${
+                  i === 0 ? "sm:col-span-2 lg:row-span-2" : ""
+                } ${i === 4 ? "sm:col-span-2" : ""}`}
               >
                 <ExperienceCard
                   experience={exp}
                   feature={i === 0}
                 />
-              </Reveal>
+              </div>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -310,7 +310,7 @@ export default async function HomePage() {
         <div className="mt-9 flex flex-wrap gap-3">
           <Link
             href="/destinations"
-            className="inline-flex h-12 items-center gap-2 rounded-md bg-white px-6 text-[15px] font-semibold text-ink transition-colors hover:bg-bone focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="btn btn-white btn-lg"
           >
             Explore the destinations
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -402,7 +402,7 @@ export default async function HomePage() {
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
                   href="/planner"
-                  className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="btn btn-primary btn-lg btn-on-dark"
                 >
                   Try the planner
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -467,30 +467,31 @@ export default async function HomePage() {
               Four steps, no lock-in
             </h2>
           </Reveal>
-          <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <Stagger as="ol" className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" step={70}>
             {HOW_IT_WORKS.map((step, i) => (
-              <Reveal key={step.title} delay={i * 0.08} className="h-full">
-                <li className="h-full rounded-2xl border border-line bg-white p-6 transition-shadow duration-300 hover:shadow-e2">
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-700">
-                      <step.icon className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <span className="flex items-end gap-1" aria-hidden="true">
-                      {Array.from({ length: i + 1 }).map((_, j) => (
-                        <FootprintIcon
-                          key={j}
-                          className="h-5 w-auto"
-                          color={j === i ? "var(--terracotta)" : "var(--sand)"}
-                        />
-                      ))}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-[20px] font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-ink-700">{step.text}</p>
-                </li>
-              </Reveal>
+              <li
+                key={step.title}
+                className="h-full rounded-2xl border border-line bg-white p-6 transition-shadow duration-300 hover:shadow-e2"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-700">
+                    <step.icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <span className="flex items-end gap-1" aria-hidden="true">
+                    {Array.from({ length: i + 1 }).map((_, j) => (
+                      <FootprintIcon
+                        key={j}
+                        className="h-5 w-auto"
+                        color={j === i ? "var(--terracotta)" : "var(--sand)"}
+                      />
+                    ))}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-[20px] font-semibold text-ink">{step.title}</h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-ink-700">{step.text}</p>
+              </li>
             ))}
-          </ol>
+          </Stagger>
           <Reveal delay={0.2}>
             <p className="mt-8 flex items-center gap-2 text-[14px] text-ink-500">
               <Banknote className="h-4 w-4" aria-hidden="true" />
@@ -555,14 +556,14 @@ export default async function HomePage() {
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
                   href="/for-operators"
-                  className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-primary btn-lg"
                 >
                   List your experiences
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/for-operators#fees"
-                  className="inline-flex h-12 items-center rounded-md border border-line-strong bg-white px-6 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-outline btn-lg"
                 >
                   See the fees
                 </Link>

@@ -62,7 +62,7 @@ export function SiteFooter() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="btn btn-ghost btn-icon btn-on-dark h-11 w-11 bg-white/10 !text-white/80 hover:!bg-white/20 hover:!text-white" 
                 aria-label="Chat with Guidr on WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
@@ -71,7 +71,7 @@ export function SiteFooter() {
                 href="https://instagram.com/getguidr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="btn btn-ghost btn-icon btn-on-dark h-11 w-11 bg-white/10 !text-white/80 hover:!bg-white/20 hover:!text-white"
                 aria-label="Guidr on Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -80,7 +80,7 @@ export function SiteFooter() {
                 href="https://facebook.com/getguidr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="btn btn-ghost btn-icon btn-on-dark h-11 w-11 bg-white/10 !text-white/80 hover:!bg-white/20 hover:!text-white"
                 aria-label="Guidr on Facebook"
               >
                 <Facebook className="h-5 w-5" />

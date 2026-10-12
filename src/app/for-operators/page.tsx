@@ -91,7 +91,7 @@ export default function ForOperatorsPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/for-operators#apply"
-                className="inline-flex h-12 items-center gap-2 rounded-md bg-terracotta px-6 text-[15px] font-semibold text-white transition-colors hover:bg-terracotta-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="btn btn-primary btn-lg btn-on-dark"
               >
                 Apply to list
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -279,7 +279,7 @@ export default function ForOperatorsPage() {
                 />
                 <Link
                   href="mailto:operators@getguidr.com"
-                  className="inline-flex h-11 w-full items-center justify-center rounded-md border border-line-strong bg-white px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-bone-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-outline btn-md btn-block"
                 >
                   operators@getguidr.com
                 </Link>

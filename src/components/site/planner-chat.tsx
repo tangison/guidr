@@ -215,13 +215,13 @@ export function PlannerChat() {
                 }
               }}
               placeholder="e.g. Three days at the coast in July, two adults, easy pace…"
-              className="custom-scroll w-full resize-none rounded-md border border-line bg-bone-50 px-4 py-3 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
+              className="custom-scroll w-full resize-none rounded-2xl border border-line bg-bone-50 px-5 py-3.5 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:border-terracotta-700 focus:ring-2 focus:ring-terracotta-50"
             />
           </label>
           <button
             type="submit"
             disabled={loading || !input.trim()}
-            className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-terracotta text-white transition-colors hover:bg-terracotta-700 disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+            className="btn btn-primary h-12 w-12 shrink-0 !p-0"
             aria-label="Send message"
           >
             {loading ? (

@@ -190,7 +190,7 @@ export default async function DestinationPage({ params }: { params: Params }) {
                 <Link
                   key={s.slug}
                   href={`/destinations/${s.slug}`}
-                  className="inline-flex h-11 items-center gap-2 rounded-full border border-line bg-white px-5 text-[15px] font-medium text-ink-700 transition-colors hover:bg-bone-50 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta-700"
+                  className="btn btn-outline btn-md !font-medium"
                 >
                   {s.name}
                   <ChevronRight className="h-4 w-4" aria-hidden="true" />

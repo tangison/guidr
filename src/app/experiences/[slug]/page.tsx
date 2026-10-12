@@ -192,7 +192,7 @@ export default async function ExperiencePage({ params }: { params: Params }) {
             </div>
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-1">
               {gallery.slice(1).map((img, i) => (
-                <div key={img} className="relative aspect-[4/3] overflow-hidden rounded-lg sm:aspect-auto sm:min-h-0">
+                <div key={img} className="relative aspect-[4/3] overflow-hidden rounded-xl sm:aspect-auto sm:min-h-0">
                   <Image
                     src={img}
                     alt={`${exp.title}, view ${i + 2}`}
