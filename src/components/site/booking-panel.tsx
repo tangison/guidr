@@ -181,8 +181,9 @@ export function BookingPanel(props: PanelProps) {
           <dd className="tabular">{formatPrice(adultTotal, props.currency)}</dd>
         </div>
         <p className="pt-1 text-[13px] text-ink-500">
-          Final price is set by the operator when they confirm. Guidr never
-          holds your money; you pay the operator directly.
+          Final price is set by the operator when they confirm. At launch you
+          pay through Guidr and we settle the operator after the trip; while
+          we launch, you pay the operator directly.
         </p>
       </dl>
 

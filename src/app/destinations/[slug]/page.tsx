@@ -28,9 +28,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const d = await getDestinationBySlug(slug);
   if (!d) return { title: "Destination not found" };
+  // Keep the combined description under 155 characters and cut at a word
+  // boundary so the SERP snippet never breaks mid-word.
+  const tagline = `${d.name}, Namibia: ${d.tagline}. `;
+  const room = Math.max(0, 152 - tagline.length);
+  const intro = room > 12 ? d.intro.slice(0, room).replace(/\s+\S*$/, "") : "";
+  const description = intro ? `${tagline}${intro}…` : tagline.trim();
   return {
     title: `${d.name}, Namibia`,
-    description: `${d.tagline}. ${d.intro.slice(0, 140)}…`,
+    description,
+    alternates: { canonical: `/destinations/${slug}` },
     openGraph: { images: [{ url: d.heroImage }] },
   };
 }

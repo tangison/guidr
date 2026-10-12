@@ -6,9 +6,10 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { FootprintIcon } from "@/components/site/logo";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/for-operators" },
   title: "For operators",
   description:
-    "List your guided tours on Guidr. Requests straight to WhatsApp, your own prices, payment direct from travellers. A listing fee and commission on completed bookings only.",
+    "List your tours on Guidr: your prices, requests to WhatsApp, commission on completed bookings only, weekly settlement.",
 };
 
 const BENEFITS = [
@@ -19,8 +20,8 @@ const BENEFITS = [
   },
   {
     icon: Banknote,
-    title: "You hold the money",
-    text: "Travellers pay you directly by bank transfer or your own payment link. Guidr never touches your funds, and never delays a payout.",
+    title: "Your money, on a schedule",
+    text: "Travellers pay Guidr once card payments are live; we settle your share weekly or fortnightly, after the trip runs. Every booking records the split: gross, commission, fees, refunds, your balance.",
   },
   {
     icon: CalendarDays,
@@ -38,7 +39,7 @@ const STEPS = [
   { step: "01", title: "Apply", text: "Business details, your guides, the trips you run. Takes ten minutes; we reply within two working days." },
   { step: "02", title: "List", text: "A guided wizard builds your listing: photos, itinerary, pricing, policies. We review before it goes live." },
   { step: "03", title: "Confirm", text: "Requests arrive on WhatsApp and email. Accept, decline or reschedule; the traveller is informed either way." },
-  { step: "04", title: "Get paid", text: "The traveller pays you directly. Mark it received, run the trip, mark it done. Commission accrues on completed trips only." },
+  { step: "04", title: "Get paid", text: "Once payments run through Guidr, the traveller pays us and your share is settled on the agreed schedule after the trip. Until then, payment is arranged directly with the traveller. Either way, commission accrues on completed trips only." },
 ];
 
 const FAQ = [
@@ -52,11 +53,11 @@ const FAQ = [
   },
   {
     q: "Do I need to be online all day?",
-    a: "No. Requests expire automatically if you cannot respond within 24 hours, but operators who confirm within four hours in the daytime convert about twice as often. WhatsApp notifications are enough.",
+    a: "No. Requests expire automatically if you cannot respond within 24 hours. Operators who confirm quickly in the daytime win noticeably more bookings than slow responders, so WhatsApp notifications are worth having on.",
   },
   {
     q: "What about payments?",
-    a: "You keep your own payment setup: bank details for EFT with proof-of-payment upload, or your own payment link (or both). Travellers see your accepted methods only after you confirm a booking.",
+    a: "Guidr is built on the marketplace model: the traveller pays once, we record the split, and your share is settled weekly or fortnightly after the trip runs, subject to any refund conditions. Until card payments go live on the site, you arrange payment directly with the traveller, we charge no commission on those trips, and only the listing fee applies.",
   },
 ];
 
@@ -168,7 +169,7 @@ export default function ForOperatorsPage() {
               <ul className="mt-6 space-y-3">
                 {[
                   "Commission accrues only when a booking reaches COMPLETED",
-                  "No card processing fees: travellers pay you directly",
+                  "Weekly or fortnightly settlement, after the trip runs",
                   "No lock-in: pause or unpublish any month",
                   "First 90 days of listing fees waived for launch operators",
                 ].map((item) => (
@@ -185,28 +186,35 @@ export default function ForOperatorsPage() {
               </p>
             </div>
             <div className="rounded-xl border border-line bg-bone-50 p-6 sm:p-8">
-              <h3 className="text-[18px] font-semibold text-ink">An example month</h3>
+              <h3 className="text-[18px] font-semibold text-ink">How one booking splits</h3>
+              <p className="mt-2 text-[14px] leading-relaxed text-ink-700">
+                A traveller pays Guidr for a confirmed trip; we record the
+                split the moment the booking is made and settle your share
+                on the agreed schedule.
+              </p>
               <dl className="mt-5 space-y-4 text-[15px]">
                 <div className="flex justify-between border-b border-line pb-4">
-                  <dt className="text-ink-700">Completed bookings</dt>
-                  <dd className="tabular font-semibold text-ink">22 trips</dd>
+                  <dt className="text-ink-700">Traveller pays</dt>
+                  <dd className="tabular font-semibold text-ink">N$ 2,000</dd>
                 </div>
                 <div className="flex justify-between border-b border-line pb-4">
-                  <dt className="text-ink-700">Revenue you collected</dt>
-                  <dd className="tabular font-semibold text-ink">N$ 96,400</dd>
+                  <dt className="text-ink-700">Guidr commission, 15% working rate</dt>
+                  <dd className="tabular text-ink-700">N$ 300</dd>
                 </div>
                 <div className="flex justify-between border-b border-line pb-4">
-                  <dt className="text-ink-700">Guidr commission on completed trips</dt>
-                  <dd className="tabular text-ink-700">set per agreement</dd>
+                  <dt className="text-ink-700">Your share, settled after the trip</dt>
+                  <dd className="tabular font-semibold text-ink">N$ 1,700</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-ink-700">Listing fees, 5 live listings</dt>
-                  <dd className="tabular text-ink-700">set per agreement</dd>
+                  <dt className="text-ink-700">Card processing fee</dt>
+                  <dd className="tabular text-ink-700">provider rate, once live</dd>
                 </div>
               </dl>
               <p className="mt-6 text-[13px] leading-relaxed text-ink-500">
-                Illustrative only: a mid-size coast operator's shoulder
-                season. Your numbers depend on your prices and your calendar.
+                Illustrative figures only: the 15% rate is the working
+                default, finalised per operator in writing. Payment fees,
+                taxes, refunds and agreed adjustments can change the final
+                amounts. The ledger on each booking is the record.
               </p>
             </div>
           </div>

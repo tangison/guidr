@@ -5,6 +5,7 @@ import { ArrowRight, Sun, CarFront, MapPin } from "lucide-react";
 import { getAllDestinations } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/destinations" },
   title: "Destinations",
   description:
     "Where Guidr operates: Swakopmund, Walvis Bay, Sossusvlei, Etosha, Damaraland, Fish River Canyon and Spitzkoppe: seasons, drive times and local tips.",
@@ -47,6 +48,7 @@ export default async function DestinationsPage() {
                   src={d.heroImage}
                   alt={`${d.name}, ${d.region}, Namibia.`}
                   fill
+                  priority={i === 0}
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />

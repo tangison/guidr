@@ -39,6 +39,10 @@ model Operator {
   baseCity       String
   whatsapp       String
   yearsRunning   Int     @default(5)
+  // Marketplace commission in basis points, recorded per agreement.
+  // 1500 bps = 15%. Snapshotted onto every booking so historic
+  // bookings keep the rate they were made under.
+  commissionRateBps Int  @default(1500)
   isDemo         Boolean @default(true)
   experiences    Experience[]
 }
@@ -115,8 +119,19 @@ model Booking {
   // requested | accepted | declined | expired | awaiting_payment | paid | completed | cancelled
   totalPriceMinor   Int
   currency          String   @default("NAD")
-  createdAt         DateTime @default(now())
-  events            BookingEvent[]
+
+  // Marketplace settlement ledger. The split is computed when the booking
+  // is created and kept as an audit trail, even while payouts are handled
+  // manually: gross, commission, fees, refunds and the operator's share.
+  commissionRateBps   Int    @default(1500) // snapshot of the agreed rate
+  commissionMinor     Int    @default(0)
+  paymentFeeMinor     Int    @default(0)   // card / provider fee, once live
+  refundMinor         Int    @default(0)
+  operatorPayoutMinor Int    @default(0)   // gross - commission - fees + adjustments
+  payoutStatus        String @default("not_due") // not_due | due | scheduled | paid
+
+  createdAt        DateTime @default(now())
+  events           BookingEvent[]
 }
 
 model BookingEvent {

@@ -4,9 +4,10 @@ import { Search, MessageCircle, ClipboardCheck, CalendarCheck2, Banknote, Shield
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/how-it-works" },
   title: "How it works",
   description:
-    "How booking through Guidr works for travellers: find a guided experience, request it, the operator confirms on WhatsApp, and you pay them directly. No middleman.",
+    "Find a guided experience, request it, the operator confirms on WhatsApp, then pay and travel. Every step, plainly.",
 };
 
 const TRAVELLER_STEPS = [
@@ -19,13 +20,13 @@ const TRAVELLER_STEPS = [
 const PAYMENT_POINTS = [
   {
     icon: Banknote,
-    title: "Bank transfer (EFT)",
-    text: "After confirmation you get the operator's bank details with a unique reference. Upload the proof of payment in the booking thread; the operator marks it received.",
+    title: "Today, while we launch: pay the operator",
+    text: "After confirmation you get the operator's bank details with a unique reference, or their own payment page. Upload the proof of payment in the booking thread; the operator marks it received.",
   },
   {
     icon: ShieldCheck,
-    title: "The operator's payment link",
-    text: "Some operators use their own payment page. Guidr shows you exactly which domain you are going to before you leave, and you upload the receipt the same way.",
+    title: "At launch: pay through Guidr",
+    text: "Card payments will run through the site: you pay once, we hold the operator's share until the trip runs, and settle them on an agreed schedule. The split is recorded on every booking.",
   },
 ];
 
@@ -66,12 +67,13 @@ export default function HowItWorksPage() {
         <section aria-labelledby="payment" className="mt-16 rounded-xl bg-ink p-8 sm:p-12">
           <p className="eyebrow text-mustard">Money, plainly</p>
           <h2 id="payment" className="mt-2 text-[26px] leading-[32px] sm:text-[34px] sm:leading-[40px] font-bold tracking-[-0.015em] text-white">
-            You pay the operator. Not us.
+            Money, on the record.
           </h2>
           <p className="mt-4 max-w-[60ch] text-[16px] leading-relaxed text-white/80">
-            In version 1, Guidr never holds traveller money. After the
-            operator confirms, payment goes directly to them by one of two
-            routes:
+            Guidr is built on the marketplace model: one payment, a recorded
+            split, and the operator's share settled after the trip runs.
+            While the site is launching, payment moves directly between you
+            and the operator by one of two routes:
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {PAYMENT_POINTS.map((p) => (

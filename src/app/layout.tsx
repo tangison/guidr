@@ -19,7 +19,10 @@ export const metadata: Metadata = {
     template: "%s · Guidr",
   },
   description:
-    "Discover and request guided tours and activities across Namibia. Curated local operators, honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
+    "Guided Namibia tours from local operators. Honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Namibia tours",
     "Swakopmund activities",
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Guidr: Guided tours and activities in Namibia",
     description:
-      "Curated local operators, honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
+      "Guided Namibia tours from local operators. Honest prices, WhatsApp-first booking. Launching at the coast: Swakopmund and Walvis Bay.",
     url: "https://getguidr.com",
     siteName: "Guidr",
     type: "website",

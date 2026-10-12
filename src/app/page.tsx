@@ -73,7 +73,7 @@ const HOW_IT_WORKS = [
   {
     icon: CalendarCheck2,
     title: "Take the trip",
-    text: "Meet your guide, take the walk, ride or flight. Pay the operator directly: Guidr never holds your money.",
+    text: "Meet your guide, take the walk, ride or flight. At launch you pay through Guidr and we settle the operator after the trip; while we launch, you pay the operator directly.",
   },
 ];
 
@@ -182,6 +182,7 @@ export default async function HomePage() {
                     alt="Warm sunrise light over the big red sand dunes of the Namib desert."
                     fill
                     priority
+                    fetchPriority="high"
                     sizes="(max-width: 1024px) 100vw, 42vw"
                     className="object-cover"
                   />
@@ -256,7 +257,6 @@ export default async function HomePage() {
               >
                 <ExperienceCard
                   experience={exp}
-                  priority={i < 2}
                   feature={i === 0}
                 />
               </Reveal>
@@ -536,8 +536,8 @@ export default async function HomePage() {
               <p className="mt-5 max-w-[52ch] text-[16px] leading-relaxed text-ink-700">
                 List your guided experiences, keep your own prices, and take
                 requests straight to WhatsApp. A listing fee and a commission
-                on completed bookings, nothing else, and Guidr never touches
-                your travellers' money.
+                on completed bookings, nothing else, with your share settled
+                on an agreed schedule after the trip runs.
               </p>
               <ul className="mt-7 space-y-3.5">
                 {[

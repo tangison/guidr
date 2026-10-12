@@ -1,11 +1,23 @@
 /** Money and duration formatting. Money is integer minor units. */
 
+/**
+ * ICU renders NAD in the en-NA locale as a bare "$" (verified against the
+ * live site), which reads as US dollars to international travellers.
+ * Namibian dollars are therefore formatted manually: "N$ 2,000", with the
+ * spacing used across the catalogue.
+ */
 export function formatPrice(
   minor: number,
   currency: string = "NAD",
   locale: string = "en-NA"
 ): string {
   const amount = minor / 100;
+  if (currency === "NAD") {
+    const grouped = new Intl.NumberFormat(locale, {
+      maximumFractionDigits: amount % 1 === 0 ? 0 : 2,
+    }).format(amount);
+    return `N$ ${grouped}`;
+  }
   try {
     return new Intl.NumberFormat(locale, {
       style: "currency",

@@ -4,6 +4,7 @@ import { GuidrLockup, FootprintTrail, FootprintIcon } from "@/components/site/lo
 import { WhatsAppButton } from "@/components/site/whatsapp-button";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description:
     "Guidr is the friendly local alternative to global booking sites: curated Namibian operators, honest prices, WhatsApp-first. Built by Tangison Studio.",
@@ -55,8 +56,8 @@ export default function AboutPage() {
               text: "Every key moment (request, confirmation, payment, reminder) has a WhatsApp path. Because that is how Namibia actually communicates.",
             },
             {
-              title: "Guidr never holds the money",
-              text: "Travellers pay operators directly by bank transfer or the operator's own payment link. We are a marketplace, not a bank.",
+              title: "The money, on the record",
+              text: "One payment, a recorded split, and the operator's share settled after the trip runs. While we launch, payment moves directly between traveller and operator.",
             },
           ].map((v) => (
             <div key={v.title}>

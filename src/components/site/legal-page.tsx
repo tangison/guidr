@@ -28,9 +28,9 @@ export function LegalPage({
         <div className="mt-8 rounded-md border border-line bg-terracotta-50 p-4">
           <p className="flex items-start gap-2.5 text-[14px] leading-relaxed text-ink-700">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-terracotta" aria-hidden="true" />
-            This text is a working placeholder. It must be reviewed by a
-            lawyer familiar with Namibian law before launch; see the
-            content-and-legal notes in the project pack.
+            Written for launch, not lawyer-proofed yet. Have an adviser
+            familiar with Namibian law read these documents before you
+            take card payments through the site.
           </p>
         </div>
 

@@ -10,9 +10,10 @@ import {
 } from "@/components/site/logo";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/brand" },
   title: "Brand",
   description:
-    "The Guidr brand system: the lockup and footprint mark, the ink, bone, terracotta and mustard palette, Poppins typography, and the rules that keep every page on one trail.",
+    "The Guidr brand system: lockup and footprint mark, ink, bone, terracotta and mustard palette, Poppins type, the rules.",
 };
 
 const CORE_COLORS = [

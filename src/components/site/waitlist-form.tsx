@@ -8,11 +8,13 @@ export function WaitlistForm() {
   const [state, setState] = React.useState<"idle" | "loading" | "done" | "error">(
     "idle"
   );
+  const emailRef = React.useRef<HTMLInputElement>(null);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.includes("@")) {
       setState("error");
+      emailRef.current?.focus();
       return;
     }
     setState("loading");
@@ -26,6 +28,7 @@ export function WaitlistForm() {
       setState("done");
     } catch {
       setState("error");
+      emailRef.current?.focus();
     }
   }
 
@@ -46,7 +49,11 @@ export function WaitlistForm() {
       <label className="flex-1">
         <span className="sr-only">Email address</span>
         <input
+          ref={emailRef}
           type="email"
+          name="email"
+          autoComplete="email"
+          spellCheck={false}
           required
           value={email}
           onChange={(e) => {
@@ -55,6 +62,7 @@ export function WaitlistForm() {
           }}
           placeholder="you@example.com"
           aria-describedby={state === "error" ? "waitlist-error" : undefined}
+          aria-invalid={state === "error"}
           className="h-12 w-full rounded-md bg-white border border-transparent px-4 text-[15px] text-ink placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white"
         />
       </label>
@@ -67,7 +75,11 @@ export function WaitlistForm() {
         Join the waitlist
       </button>
       {state === "error" && (
-        <p id="waitlist-error" className="text-[13px] text-white/80 sm:absolute sm:-bottom-6">
+        <p
+          id="waitlist-error"
+          role="alert"
+          className="text-[13px] text-white/80 sm:absolute sm:-bottom-6"
+        >
           That email does not look right. Try again?
         </p>
       )}

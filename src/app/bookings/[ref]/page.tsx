@@ -26,7 +26,7 @@ type Search = Promise<{ sent?: string }>;
 const STEPS = [
   { key: "requested", label: "Request sent", hint: "The operator has your request." },
   { key: "accepted", label: "Confirmed", hint: "Your guide confirms the date and price." },
-  { key: "awaiting_payment", label: "Payment", hint: "Pay the operator directly by EFT or their payment link." },
+  { key: "awaiting_payment", label: "Payment", hint: "At launch you pay through Guidr; while we launch, pay the operator directly by EFT or their payment link." },
   { key: "paid", label: "Paid", hint: "The operator marks your payment received." },
   { key: "completed", label: "Trip done", hint: "Walked, ridden, flown. A review would help the next traveller." },
 ];
@@ -301,9 +301,11 @@ export default async function BookingPage({
                 How payment works
               </h2>
               <p className="mt-2 text-[14px] leading-relaxed text-ink-700">
-                After the operator confirms, you pay them directly: by bank
-                transfer with a proof-of-payment upload, or through the
-                operator's own payment link. Guidr never holds your money.
+                While we launch, you pay the operator directly after they
+                confirm: by bank transfer with a proof-of-payment upload, or
+                through their own payment link. At launch, payment runs
+                through Guidr and the operator's share is settled after the
+                trip.
               </p>
             </div>
           </aside>

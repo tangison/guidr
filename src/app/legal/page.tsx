@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/legal" },
   title: "Legal",
   description: "Legal documents for getguidr.com.",
 };

@@ -52,6 +52,8 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "inline" })
           <span className="sr-only">What are you looking for?</span>
           <input
             type="search"
+            name="q"
+            autoComplete="off"
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Dolphins, dunes, rock art…"
@@ -63,6 +65,7 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "inline" })
           <MapPin className="h-4 w-4 shrink-0 text-ink-500" aria-hidden="true" />
           <span className="sr-only">Destination</span>
           <select
+            name="destination"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             className="w-full cursor-pointer appearance-none bg-transparent text-[15px] text-ink focus:outline-none"
@@ -91,6 +94,7 @@ export function SearchBar({ variant = "hero" }: { variant?: "hero" | "inline" })
           <Users className="h-4 w-4 shrink-0 text-ink-500" aria-hidden="true" />
           <span className="sr-only">Guests</span>
           <select
+            name="guests"
             value={guests}
             onChange={(e) => setGuests(e.target.value)}
             className="w-full cursor-pointer appearance-none bg-transparent text-[15px] text-ink focus:outline-none"

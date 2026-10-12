@@ -200,11 +200,20 @@ export async function createBookingRequest(input: {
 }): Promise<Booking> {
   const experience = await db.experience.findUnique({
     where: { id: input.experienceId },
+    include: { operator: true },
   });
   if (!experience) throw new Error("Experience not found");
 
   // Recompute the total on the server. Never trust client prices.
   const total = experience.priceMinor * input.guests;
+
+  // Marketplace settlement split, recorded at creation time so the audit
+  // trail exists from day one even while payouts are handled manually.
+  // The rate is snapshotted from the operator's agreed commission.
+  const rateBps = experience.operator?.commissionRateBps ?? 1500;
+  const commission = Math.round((total * rateBps) / 10000);
+  const operatorShare = total - commission;
+
   const ref = `GDR-${Date.now().toString(36).toUpperCase().slice(-6)}${Math.random()
     .toString(36)
     .toUpperCase()
@@ -223,10 +232,14 @@ export async function createBookingRequest(input: {
       status: "requested",
       totalPriceMinor: total,
       currency: experience.currency,
+      commissionRateBps: rateBps,
+      commissionMinor: commission,
+      operatorPayoutMinor: operatorShare,
+      payoutStatus: "not_due",
       events: {
         create: {
           type: "created",
-          text: `Booking request sent to ${experience.operatorId}. We will confirm within 24 hours.`,
+          text: `Booking request sent to ${experience.operator?.name ?? experience.operatorId}. We will confirm within 24 hours.`,
         },
       },
     },

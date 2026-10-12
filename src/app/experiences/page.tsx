@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { searchExperiences, getAllDestinations } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/experiences" },
   title: "Experiences",
   description:
     "Browse guided tours and activities across Namibia: the coast, the desert, the wild. Honest prices from local operators.",

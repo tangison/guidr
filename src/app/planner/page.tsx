@@ -4,6 +4,7 @@ import { WhatsAppButton } from "@/components/site/whatsapp-button";
 import { FootprintTrail } from "@/components/site/logo";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/planner" },
   title: "AI trip planner",
   description:
     "Plan your Namibia trip with the Guidr planner. Itineraries built from real catalogue experiences and honest prices, never invented ones.",
