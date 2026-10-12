@@ -81,3 +81,25 @@ Stage Summary:
 - Guidr rebuilt with ultra taste: zero stock images, zero synthetic content, one consistent art direction, award-level motion, honest pre-launch data
 - Live at https://guidr-eta.vercel.app and pushed to https://github.com/tangison/guidr
 - Known Vercel limitation: AI planner falls back to its honest error message unless the Z.ai SDK key is added as a Vercel env var; all other flows work end-to-end
+
+---
+Task ID: 5
+Agent: Super Z (main agent)
+Task: Audit the Guidr site against all principles using at least 40 of the best skills (tangison-super-skills procedure), fix everything found, redeploy, deliver an audit report
+
+Work Log:
+- Super-skills procedure executed: find-skills bootstrap (full output read), 84 local skills inventoried, 7 capabilities defined, 12 ecosystem searches run, candidates scored and vetted by reading full SKILL.md files; 2 new skills installed and verified on disk (cloudflare web-perf, vercel web-design-guidelines into .agents/skills)
+- Picks table delivered: 42 skills engaged across performance, SEO, a11y, design, code, webmaster, payments, tooling
+- Live audit on guidr-eta.vercel.app + source audit + Playwright runtime audit + VLM visual QA
+- CRITICAL findings fixed: (1) prices rendered bare "$" (ICU en-NA drops the N) -> manual N$ formatting, verified live; (2) canonical links missing site-wide -> alternates.canonical on layout + 12 static pages + 2 dynamic generateMetadata routes; (3) no marketplace payment ledger -> Booking gains commissionRateBps/commissionMinor/paymentFeeMinor/refundMinor/operatorPayoutMinor/payoutStatus, Operator gains commissionRateBps, split computed at booking creation (verified: gross 140000 -> commission 21000 @1500bps -> operator 119000); (4) booking confirmation 404 on serverless cross-instance reads -> short-lived httpOnly receipt cookie renders confirmation from the action's own data (E2E verified live)
+- HIGH fixed: CSP + X-Content-Type-Options + Referrer-Policy + Permissions-Policy + X-Frame-Options headers; immutable 1y cache for /images,/brand,og.jpg; 4 over-length meta descriptions rewritten; legal pages rewritten with substantive marketplace-model text (placeholder wording removed, dead legal/terms + legal/privacy routes deleted); LCP image priorities fixed (below-fold card priority removed, hero fetchPriority, destinations first card)
+- MEDIUM fixed: waitlist form autocomplete/name/spellCheck/aria-invalid/role=alert/focus-on-error; search-bar name+autocomplete attrs; unverifiable conversion claim softened; dead scroll-story.tsx + seed-reviews.ts deleted; destination description word-boundary truncation
+- Marketplace model copy aligned on for-operators (settlement schedule + illustrative N$2,000/N$300/N$1,700 split table), how-it-works, booking panel, bookings page, home, about
+- Vercel deploy mishap resolved: unlinked CLI deploy created a stray project without DATABASE_URL -> linked to existing guidr project, redeployed clean, stray my-project removed
+- Committed and pushed 2 commits (8afa8c2, abf0d47) to github.com/tangison/guidr; production redeployed to guidr-eta.vercel.app and fully re-verified (15 routes 200, headers, N$, canonicals, E2E booking, waitlist)
+- Report produced via pdf skill (Report brief, ReportLab body + Template 07 Crystal Blue cover via html2poster, pypdf merge): download/Guidr-Website-Audit-Report.pdf (10 pages, 158KB, QA WARN-only on intentional stat-box row) + cover HTML source
+
+Stage Summary:
+- 15 findings (4 critical, 5 high, 6 medium), all fixed and verified on production
+- Marketplace ledger now records every split from the moment of booking; receipt-cookie fallback makes the booking flow serverless-safe
+- Open items for the owner: payment provider investigation, legal/accounting structure, Convex migration, custom domain, WhatsApp line, Z.ai planner key on Vercel, lawyer review, local SEO at launch
